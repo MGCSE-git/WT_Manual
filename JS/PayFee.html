@@ -1,0 +1,116 @@
+<html>
+<head><title>Fee Payment using Date and STring Objects</title>
+<style>
+	body{
+				
+		background-image:url("../Images/bg.png");
+		height:100%;
+		width:100%;
+		}
+	#head1{
+		text-align:center;
+		background-color:black;
+		//opacity:0.7;
+		color:white;
+		position:relative;
+		top:-25;
+		//top:20;
+		}
+	#content{
+		width:400px;
+		height:auto;
+		background-color:DarkOrange ;//rgb(48, 70, 232);
+		opacity:.9;
+		position:relative;
+		top:0;left:450px;
+		text-align:center;
+		overflow:auto;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+	<img src="../Images/main_header1.jpg" style="height:150px;width:100%;"/>
+	<h1 id="head1">DEPARTMENT OF CSE</h1>
+	</header>	
+<div id="content">
+<h1>Onlie Fee Payment </h1>
+<h2 style="background-color:brown;color:limegreen;">(Use of Date Object)</h2>
+<form>
+	<p style="font-size:15pt;font-weight:bold;">Name&nbsp;&nbsp;&nbsp;
+	<input type="text" id="uname" value=" "/><br/><br/>
+	Roll No.&nbsp;&nbsp;&nbsp;
+	<input type="text" id="roll" value=" "/><br/><br/>
+	Year of Study&nbsp;&nbsp;
+	<select id="yr">
+	<option>Select</option>	
+	<option value="I">I</option>	
+	<option value="II">II</option>
+	<option value="III">III</option>
+	<option value="IV">IV</option>
+	</select><br/><br/>
+	Department&nbsp;&nbsp;
+	<select id="dept">
+	<option>Select</option>	
+	<option value="civil">CIVIL</option>	
+	<option value="mechanical">MECHANICAL</option>
+	<option value="automobile">AUTOMOBILE</option>
+	<option value="ece">ECE</option>
+	<option value="eie">EIE</option>
+	<option value="eee">EEE</option>
+	<option value="cse">CSE</option>
+	<option value="it">IT</option>
+	</select><br/><br/>
+		
+	<input type="button" onclick="PayFee()" value="Pay"/>
+	</p>
+	</form>
+	<h3 style="font-weight:bold;background-color:#350000 ;color:LimeGreen; width:150px;margin-left:130px;" id="details">Your Details: </h3>
+	<h3  style="font-weight:bold;" id="status"></h3>
+	</div>
+<script>
+var stName,stRoll,stDept,stYear;
+var h,st;
+
+function PayFee()
+{
+
+	stName=document.getElementById("uname").value;
+	stRoll=document.getElementById("roll").value;
+	stDept=document.getElementById("dept").value;
+	stYear=document.getElementById("yr").value;
+	st=document.getElementById("status");
+	h=document.getElementById("details");
+	
+	
+	var dt2=new Date();
+	var currentDate=dt2.getDate()+1;
+	var currentMonth=dt2.getMonth()+1;
+	alert(currentMonth);
+	var dt1=new Date(2023,8,29);
+	//Checking the due date
+	alert(dt1.getMonth());
+
+	if(currentDate<=dt1.getDate() && currentMonth<=dt1.getMonth())
+	{
+		alert("Can Pay");
+		stName=stName.toUpperCase();
+		stRoll=stRoll.toUpperCase();
+		stDept=stDept.toUpperCase();
+		h.innerHTML+="<br/>"+stName+"<br/>"+stRoll+"<br/>"+stDept+"<br/>"+stYear;
+		st.style.color="green";
+		st.innerHTML="Your Payment is Successfull";
+	}
+	else
+	{
+		st.style.color="red";
+		st.innerHTML="Can't Pay after due date. Contact Office ";
+	}
+
+
+}
+
+</script>
+</body>
+</html>

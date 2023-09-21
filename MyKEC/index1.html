@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html >
+<head>
+<link rel="stylesheet" type="text/css" href="Styles/cs_sidebar.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+		#mhead{
+			position:fixed;
+			z-index:3;
+		}
+		#outer{
+			position:fixed;
+			
+		}
+		#logo{
+			float:left;
+			//border-top-right-radius:70px;
+			//border-bottom-right-radius:70px;
+			//background-color:grey;//DodgerBlue;//orange;
+			background-image: linear-gradient(to right,DodgerBlue,grey);
+			height:130px;
+			width:375px;
+			position:fixed;
+			top:0;left:0;
+			z-index:1;
+			
+		}
+		#hmenu{
+			float:right;
+			width:80%;
+			height:130px;
+			//border-top-left-radius:70px;
+			//border-bottom-left-radius:70px;
+			//background-color:dodgerblue;//grey;
+			background-image: linear-gradient(to left,dodgerblue,grey);
+			position:fixed;
+			top:0;right:0;
+			
+		}
+		#titl{
+			font-size:25pt;
+			font-weight:bold;
+			color:black;//purple;
+			float:right;
+			margin-right:30px;
+			margin-top:5px;
+			/*position:relative;
+			top:-50;
+			right:0;*/
+		}
+#hmenu1{
+left:120px;
+position:absolute;
+top:70px;
+}
+#hmenu1 ul {
+list-style:none;
+}
+#hmenu1 ul li {
+float:left; 
+position:relative; 
+padding-right:15px; 
+display:block;//inline;
+}
+#hmenu1 li a{
+	color:aqua;
+	font-size:13pt;
+	text-decoration:none;
+}
+#hmenu1 li ul {
+    display:none;
+position:absolute;
+}
+#hmenu1 li ul a{
+	color:black;
+}
+#hmenu1 li ul li{
+	padding-bottom:7px;
+}
+#hmenu1 li:hover ul{
+    display:block;
+    background:lightgrey;
+height:auto; width:14em; 
+}
+#hmenu1 li ul li ul{
+    display:none;
+position:absolute;
+}
+/*.smenu:hover ul{
+	display:block;
+	width:10em;height:auto;
+}*/
+#hmenu2 ul {
+padding-left:10px; list-style:none;
+position:fixed;//relative; 
+//float:right;
+right:0px;
+top:0;
+}
+#hmenu2 li  {
+float:left; 
+position:relative; 
+//padding:10px; 
+margin-right:15px;
+display:block;
+}
+
+#hmenu2 li a{
+	color:white;//orange;
+	font-size:13pt;
+	text-decoration:none;
+}
+#hmenu2 li ul {
+    display:none;
+position:absolute;
+height:auto; width:130px;
+top:30px;
+//z-index:2;
+}
+
+#hmenu2 li ul a{
+	color:black;
+	font-size:13pt;
+	//font-weight:bold;
+}
+#hmenu2 li:hover ul{
+    display:block;
+    background:purple;
+//height:auto; width:auto; 
+left:0px;
+}
+#mainImg{
+	position:absolute;
+	top:100px;left:0px;
+	background-image:url('Images/flipImg1.jpg');
+	height:400px;
+	width:100%;
+	opacity:.7;
+	z-index:-1;
+}
+
+/*#mainImg div{
+	background-color:black;
+	//opacity:.7;
+	position:relative;
+	top:100px;left:0px;
+	width:100%;
+	//z-index:-1;
+}*/
+.right1{
+		height:250px;width:400px;
+		background-color:black;
+		opacity:.8;
+		overflow:hidden;
+		text-align:justify;
+		border-radius:40px;
+		position:absolute;
+		top:200px;right:30px;
+		//z-index:1;
+	}
+	.right1 a{
+		text-decoration:none;
+		color:dodgerblue;
+		margin-top:10px;
+	}
+	#events{
+		margin-left:10px;
+	}
+	#events span{
+		color:white;
+	}
+
+#mEvents{
+	display:flex;
+	position:absolute;
+	top:2000px;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	margin:10px;
+
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 230px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	background-color:dodgerblue;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	background-color:black;
+	transform: rotateY(180deg);
+}
+.front img{
+	position:relative;
+	width:100%;
+	height:200px;
+	top:-20px;
+}
+.back p{
+	text-align:justify;
+	color:dodgerblue;//rgb(191, 255, 0);
+}	
+.front h3{
+	text-align:center;
+	position:relative;
+	top:-10px;
+}
+
+/*#depts{
+	background-image:url("Images/flipImg1.jpg");
+	position:relative;
+	top:800px;
+	height:auto;width:100%;
+	}	*/
+.city h3{
+	color:brown;
+	//background-color:grey;
+}
+#deptimg{
+	width:80%;height:100%;
+	position:relative;
+	background-image:url("Images/mainbuilding.jpg");
+	left:150px;top:500px;
+}
+#cse{
+	width:80%;height:40%;
+	position:relative;
+	overflow:scroll;
+	//background-image:url("Images/mainbuilding.jpg");
+	left:150px;top:500px;
+}
+	 .tabs a{
+		color:white;
+		font-size:13pt;
+		display:inline;
+		padding:10px;
+		position:relative;
+		top:10px;
+		text-decoration:none;
+	}
+	.tabs a:hover{
+		background-color:grey;
+	}
+	.tabs{
+		//background-color:black;
+		background-image: linear-gradient(to right,dodgerblue, black,grey);
+		height:40px;
+	}
+	#d3{
+		display:flex;
+		width:auto;
+	}
+	p{
+		margin-left:20px;
+	}
+	th,td{
+		text-align:left;
+		margin-right:6px;
+	}
+	#cse li{
+	//	margin-left:20px;
+		text-align:justify;
+	}		
+	#pos{
+		display:flex;
+	}
+
+
+
+	.foot{
+		background-color: grey;//#99ccff;//rgb(191, 255, 0);//lightblue;	
+		position:absolute;
+		top:2500px;
+		bottom:0px;
+		width:100%;
+		height:350px;
+		left:0px;
+	}
+	.foot1{
+		display: flex;
+		//float:right;
+		//background-color:black;
+		position:relative;
+		width:800px;
+		left:230px;
+	}
+	.foot1 h3{
+		text-align:center;
+	}
+	.foot1 div a{ 
+		text-decoration:none;
+		color:white;
+		//position:relative;
+		//margin-top:15px;
+	}
+	.foot1 div li{ 
+		list-style:none;
+		position:relative;
+		margin-top:12px;
+	}
+	.foot2{
+		position:relative;
+		bottom:0px;
+		background-color:grey;
+		height:70px;
+	}
+	.foot2 li{
+		display:inline;
+		padding:10px;
+		float:right;
+
+	}
+</style>
+</head>
+<body style="overflow:scroll;">
+<div id="mhead">
+	<div>
+		<div id="logo">		
+		<img src="Images/KEC_Transform1.png" style="width:120px;height:100px;position:absolute;top:10px;left:15px;"/>
+		<img src="Images/Kongu Logo2.png" style="width:120px;height:50px;position:fixed;top:75px;right:0px;"/>
+	<p id="titl">Kongu<br/>
+	Engineering<br/>
+	College</p>
+		</div>
+<!--Side Bar-->
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<div>
+          <h3>Cells for Student Support</h3>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+  <div>
+          <h3>Fee and Student Details</h3>
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    
+                </ul>
+            </div>
+</div>
+
+<div id="main">
+ <button class="openbtn" onclick="openNav()"> <i class="fa fa-bars"></i>  </button>
+  
+</div>
+
+<div id="hmenu">		
+<div id="hmenu1">
+        <ul> <li><a href="#">Home</a> </li>
+            <li>
+            <a href="#">About KEC</a> </li>
+            <li>
+            <a href="#">Programmes</a>
+                <ul> <li><a href="#">Under Graduate</a>
+				<ul>
+				<li><a href="#">Civil Engineering</a></li>
+				<li><a href="#">Automobile Engineering</a></li>
+				<li><a href="#">Mechanical Engineering</a></li>
+			</ul>
+			<li/> 
+		<li><a href="#">Post Graduate</a></li>
+		<li><a href="#">Applied Sciences</a></li>
+	</ul>
+	</li>
+            
+            <li>
+            <a href="#">Schools and Departments</a>
+              <ul>
+		<li><a href="#">Building & Mechanical Sciences</a></li>
+		<li><a href="#">Chemical and Food Sciences</a></li>
+		<li><a href="#">Electrical Sciences</a></li>
+		<li><a href="#">Communication and Computer Sciences</a></li>
+		
+		<li><a href="#">Management Studies</a><li/>
+		<li><a href="#">Computer Technology and Applications</a><li/>
+		<li><a href="#">Science and Humanities</a></li>
+		</ul>
+
+	     	
+            </li>
+	 <li>
+            <a href="#">Facilities</a>
+                <!--<ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>-->
+        
+            </li>
+	 <li>
+            <a href="#">Accreditation</a>
+<!--                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>-->
+        
+            </li>
+        </ul>
+</div>
+	<div id="hmenu2">
+        <ul> <li><a href="#">COE</a>   </li>
+            <li> <a href="#">R&amp;D</a>   </li>
+            <li> <a href="#">Placement</a>  </li>
+            <li> <a href="#">IIPC</a> </li>
+	<li><a href="#">Alumni</a>  </li>
+	   <li> <a href="#">Contact</a>  </li>
+        </ul>
+</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="mainImg">
+<div></div>
+<!--<img src="Images/flipImg1.jpg" style="width:100%;height:400px;"/>-->
+</div>
+<!--End of header-->
+<!--Upcoming Events-->
+<div class="right1">
+             <h2 style="color: #666666;text-align:center;">Events Calender</h2>
+                <br>
+<marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()" height="500px" width="100%" align="center">
+                <p id="events"> 
+                <a href="#">CSIR Sponsored National Seminar on Novelty in Applications of Graph Theory to The Internet of Things</a><span>18&19 Jul 2019</span><br/>
+                 <br/>
+                <a href="#">Two days workshop on Design of Solar PV and Thermal Energy systems </a><span>19&20 Jul 2019</span><br/>
+                 <br/>
+                <a href="#">Hands-on Workshop on Introduction to MEAN Stack Development</a><span>20 Jul 2019</span><br/>
+                <br/>
+                <a href="#">National Seminar on Adanced Microstructure Analysis of Concrete and its Inetrpretation</a> <span>25&26 Jul 2019</span><br/>
+                <br/>
+                <a href="#">CSIR Sponsored National Seminar on Recent Trends and Challenges in Bayesian Statistics for Big Data Analytics </a><span>26 Jul 2019</span><br/>
+   	<br/>
+                <a href="#">Hands-on Training to create Hybrid App (React Native with AngularJS, Android, iOS)</a><span>26 Jul 2019</span><br/>
+                 <br/>
+                <a href="#">SERB Sponsored Seminar on Biodegradable and Recyclable Lightweight Polymer Materials forAutomobile Applications</a><span>26&27 Jul 2019</span><br/>
+              </p>
+	</marquee></div>
+
+<div id="mEvents">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 1</h3>
+               		<img src="Images/flipImg1.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 2</h3>
+                <img src="Images/flipImg2.gif"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 3</h3>
+                                <img src="Images/flipImg3.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 4</h3>
+                                  <img src="Images/flipImg4.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="deptimg"></div>
+<div id="depts">
+
+<div id="cse">
+  <h2 style="text-align:center;color:green;">Department of Computer Science and Engineering</h2>
+ 
+<div class="tabs">
+<a href="#" onclick="openCity('Home')">Home</a>
+  <a href="#"  onclick="openCity('Highlights')">Highlights</a>
+  <a href="#"  onclick="openCity('Laboratories')">Laboratories</a>
+  <a href="#"  onclick="openCity('Library')">Library</a>
+</div>
+
+<div id="Home" class="city">
+  <div>
+      <h3>Programmes Offered</h3>
+    <div><table style="margin-left:20px;" width="300" border="0">
+  <tr>
+<th>Programme</th>
+<th>Intake</th>
+  </tr>
+<tr><td>B.E</td>
+  <td>240</td></tr>
+<tr><td>M.E CSE</td>
+  <td>25</td></tr>
+<tr><td>PhD</td>
+  </tr>
+</table>
+</div>
+</div>
+<div id="d3">
+<div style="width:400px;text-align:justify;margin-right:20px;">
+      <h3>Vision</h3>
+      <p> To be a centre of excellence for nurturing competent computer professionals of high calibre and quality for catering to the ever-changing needs of the industry and society </p>
+   </div>
+<div>
+     <h3>Mission</h3>
+      <p>Department of Computer Science &amp; Engineering  is committed
+to    </font>    
+
+      <ul >
+      <li> Develop innovative, competent and ethically strong computer engineers to meet global challenges. </li>
+      <li>Foster consultancy and basic as well as applied research activities to solve real world problems. </li>
+      <li> Endeavour for constant upgradation of technical expertise to cater to the needs of the industry and society </li>
+    </ul>
+    </div>
+   </div> 
+
+ <div>
+    
+      <h3>Programme Educational Objectives</h3>
+   <p>   Graduates of Computer Science and Engineering will
+      <ul>
+      <li>Utilize the fundamental knowledge of basic sciences and engineering to succeed in their professional career. </li>
+      <li> Analyze, design, develop and verify computer-based solutions to real world problems</li>
+      <li>Exhibit soft skills, ethical code of conduct and ability for life-long learning </li>
+  </ul>
+</p>	
+	
+    </div>
+ <div>
+    
+      <h3>Programme Outcomes</h3>
+      <p><strong> Engineering Graduates will be able to:</strong>
+   <div id="pos">
+	<div><ol type="1">
+        <li><strong> Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems </li>
+        <li><strong> Problem analysis:</strong> Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences </li>
+        <li><strong> Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations </li>
+        <li><strong> Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions </li>
+        <li><strong> Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations </li>
+        <li><strong> The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice </li></ol></div>
+	<div><ol type="1" start="7">
+        <li><strong> Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development </li>
+        <li><strong> Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice </li>
+        <li><strong> Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings </li>
+        <li><strong> Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions </li>
+        <li><strong> Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one&rsquo;s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments </li>
+        <li><strong> Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change </li>
+      </ol></div>
+</div>
+
+     </p>
+ </div>
+ <div>
+    <h3>Programme Specific Outcomes</h3>
+      <ol type="1">
+        <li><strong> </strong>
+         <strong> Foundations of Computer Science</strong> : Ability to use the mathematical and 
+computing knowledge to propose viable ideas and solutions to solve real 
+world problems</li>
+        <li>
+         <strong>Software design and Development:</strong> Ability to develop computer based systems using engineering skills, 
+knowledge of software design process, programming languages and tools
+        </li>
+      </ol>
+      
+ </div>
+</div>
+
+
+<div id="Highlights" class="city" style="display:none">
+    <div>
+      <h3>HIGHLIGHTS</h3>
+       <ul >
+      <li> Secured many ranks and gold medals in Bharathiar University, Coimbatore and Anna University, Chennai </li>
+      <li> Consistent improvement in placement and higher education </li>
+      <li> Funded Research Projects: 3 Completed of worth Rs. 8.47 lakhs and 2 Ongoing of worth Rs. 25.62 lakhs </li>
+      <li> Organized funded seminars and workshop programmes of worth Rs. 20.41 lakhs </li>
+      <li> MoUs with leading industries like Infosys, TCS and CDAC. Received best Single Point Of Contact award from Infosys for the year 2016 </li>
+      <li> Organized 3 International Conferences and 8 National Conferences </li>
+      <li> 43 Research Scholars completed PhD and 51 are pursuing from CSE research centre </li>
+      <li> Received overall best performing department award for the academic year 2016-2017. Also won the best performing department in Enthusia, Women Development Cell and Higher Education/Competitive Examination Cell </li>
+      <li> Awards won by faculty: Best Reviewer by IEEE Access, Shri P.K. Das Memorial Best faculty, Outstanding Women in Engineering &ndash; CSE by VIFA, Chennai </li>
+      <li> Awards won by students: Gandhian Young Technological Award, Chief Minister Excellence Award, CTS Best student Award, Student Innovative Best Projects Award </li>
+      <li> Best CSI Student Branch award for the year 2015 </li>
+      <li> Fetched overall best outgoing student award for 5 times </li>
+      <li> Several prizes and awards won by students from premier institutions like IITs, NITs and ISI </li>
+      <li> Around 10% of Alumni established as successful entrepreneurs </li>
+      <li> National and International representation in Sports and Games</li>
+    </ul>
+</div>
+</div>
+<!--Laboratory Details-->
+<div id="Laboratories" class="city" style="display:none">
+    <h2>Paris</h2>
+  <p>Paris is the capital of France.</p> 
+</div>
+<!--Library Details-->
+<div id="Library" class="city" style="display:none">
+
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+</div>
+
+</div>
+<!--Flip content url - https://davidwalsh.name/css-flip-->
+
+
+<div class="foot">
+        <div style="width:100%;text-align:center;">
+                 <h3>Search this website by keywords or browse from sections below</h3>
+                 <input type="text" placeholder="Search.." name="search" style="height:30px;"/>
+                <input  type="submit" style="height:30px;width:100px;"/>
+       </div><br/>
+
+<div class="foot1">
+          <div>
+                <h3>Quick Find</h3>
+                  <ul>
+                    <li><a href="#">Administration</a></li>
+                    <li><a href="#">KEC Virtual Tour</a></li>
+                    <li><a href="#">KEC Web album</a></li>
+                    <li><a href="#">Patent Obtained</a></li>
+                    <li><a href="#">Kongu CRS</a></li>
+                </ul>
+            </div>
+	<div>
+          <h3>Quick Find</h3>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+            <div>
+          <h3>Quick Find</h3>
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+           <div>
+          <h3>Quick Find</h3>
+                <ul>
+                    <li><a href="#">Library Committee</a></li>
+                    <li><a href="#">Staff Handbook</a></li>
+                    <li><a href="#">Non-teaching Staff</a></li>
+                    <li><a href="#">Audit Report</a></li>
+                    <li><a href="#">Mandatory Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+   <div class="foot2">
+                 <ul >
+                <li><a href="#">About KEC</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul><br/>
+	    <h4 style="text-align:right;">©2019 KEC.All rights reserved</h4>
+        </div>
+  </div>
+
+
+<!--000webhost URL- https://wtlabmanual.000webhostapp.com/index.html-->
+<script>
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(cityName).style.display = "block";  
+}
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</body>
+</html>

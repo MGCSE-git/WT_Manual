@@ -1,0 +1,153 @@
+<html>
+	<head>
+	<title>14ITL52 - Web Technology Laboratory - Lab Manual</title>
+	</head>
+		<style>
+			#head1{
+				text-align:center;
+				background-color:black;
+				opacity:0.7;
+				color:white;
+				position:absolute;
+				top:110;
+				width:100%;
+			}
+			#head2{
+				text-align:center;
+				background-color:yellowgreen;
+				color:black;
+				position:absolute;
+				top:145;
+				width:100%;
+			}
+			#head1:hover{
+				color:GreenYellow;
+			}
+			#head2:hover{
+				color:tomato;
+			}
+			#exp{
+				position:absolute;
+				top:220px;
+				//text-align:center;
+				font-size:15pt;
+			}
+			#back{
+				
+				background-image:url("Images/bg.png");
+				//background-repeat:repeat-x;
+				height:100%;
+				width:100%;
+
+			}
+			.color1{
+				font-size:16pt;
+				background-color:gold;//rgb(44,110,166);
+				color:rgb(36,34,69);
+				width:100px;
+				font-weight:bold;
+				//opacity:.7;
+
+			}
+			.color2{
+				font-size:16pt;	
+				font-weight:bold;			
+				background-color:tomato;//rgb(253, 249, 124);
+				color:DarkSlateBlue;// navy ;
+				width:100px;
+			}
+			#one{
+				position:fixed;
+				width:180px;
+				top:170px;
+				padding: 5;
+				background-color:YellowGreen ;//rgb(32, 26, 20);
+			}
+			#two{
+				right:8;
+				width:180px;
+				position:fixed;
+				padding-right:0;
+				background-color:YellowGreen ;//rgb(32, 26, 20);
+				top:170px;
+			}
+			#two a{
+				position:relative;
+				right:0px;
+			}
+			a{
+				text-decoration:none;
+			}
+			#explist li{
+				padding:10px;
+				font-size:15pt;
+				color:white;
+			}			
+							
+		</style>
+		<script src="Script/Change1.js">
+		</script>
+	<body>
+		<header>
+		<!--<img src="Images/main_header1.jpg" style="height:125px;width:100%;"/>-->
+		<div style="background-color:YellowGreen;position:absolute;top:0;width:100%;text-align:center;"><h1 id="head0">KONGU ENGINEERING COLLEGE</h1>
+			<p style="font-size:13pt;font-weight:bold;"> Autonomous<br/>
+			Perundurai, Erode.</p>
+		</div>
+		
+		<h1 id="head1">DEPARTMENT OF CSE<h1/>
+		<h1 id="head2">14ITL52 - Web Technology Laboratory - Lab Manual</h1>
+		</header>
+		<div id="back"></div>
+		
+		<div id="list" style="background-color:dodgerblue;width:60%;height:auto;border:6px dotted tomato;position:absolute; margin-left:250px;">
+		<h2 style="text-align:center;">List of Experiments</h2>
+		<p>
+			<ol id="explist">
+			<li>Design a Web Page Using HTML Tags and host it in WebServer</li>
+			<li>Create a XHTML document to implement types of CSS</li>
+			<li>Design a Web Page with menu layout by applying various formatting styles in CSS</li>
+			<li>Design a registration page to create email-id validate the information in the web page using JavaScript</li>
+			<li>Write a JavaScript program to use Objects and Collections</li>
+			<li>Design a Web page to create simple interactive CGPA calculator</li>
+			<li>Create a website to load the content dynamically using AJAX</li>
+			<li>Create a Website using PHP and MYSQL</li>
+			<li>Create a Website to illustrate Session Tracking in PHP</li>
+			<li>Develop and display online reservation system using JavaScript, CSS, AJAX, PHP, MySQL with Session Tracking</li>
+			</ol>
+		</p>
+		</div>
+		<div id="one">
+		<a class="color1" href="HTML/links.html" onmouseover="change(this)" onmouseout="change1(this)" id="E1">EXPERIMENT-1</a><br/><br/>
+		<a class="color2" href="HTML/cse_index2.html" onmouseover="change(this)" onmouseout="change1(this)" id="E2">EXPERIMENT-2</a><br/><br/>
+		<a class="color1" href="HTML/BookTitles.html" onmouseover="change(this)" onmouseout="change1(this)" id="E3">EXPERIMENT-3</a><br/><br/>
+		<a class="color2" href="HTML/CSE_CSS.html" onmouseover="change(this)" onmouseout="change1(this)" id="E4">EXPERIMENT-4</a><br/><br/>
+		<a class="color1" href="JS/Email_Validation1.html" onmouseover="change(this)" onmouseout="change1(this)" id="E5">EXPERIMENT-5</a><br/><br/>
+		<a class="color2" onmouseover="change(this)" onmouseout="change1(this)" id="E6">EXPERIMENT-6</a><br/><br/>
+				<ul style="position:relative;margin-top:-10px;">
+				<li class="color2"><a href="JS/personalInfo.html" id="E6.1">Exp 6.1</a></li><br/>
+				<li class="color1"><a href="JS/events.html"  id="E6.2">Exp 6.2</a></li><br/>
+				<li class="color2"><a href="JS/pic_change.html"  id="E6.3">Exp 6.3</a></li><br/>
+				<li class="color1"><a href="JS/validation.html" id="E6.4">Exp 6.4</a></li><br/>
+				<li class="color2"><a href="JS/collections.html" id="E6.5">Exp 6.5</a></li><br/>
+				</ul>
+		</div>
+		<div id="two">
+		<a class="color2" onmouseover="change(this)" onmouseout="change1(this)" id="E12">EXPERIMENT-12</a><br><br/>
+		<a class="color1" onmouseover="change(this)" onmouseout="change1(this)" id="E11">EXPERIMENT-11</a><br><br/>
+		<a class="color2" onmouseover="change(this)" onmouseout="change1(this)" id="E10">EXPERIMENT-10</a><br/><br/>
+		<a class="color1" onmouseover="change(this)" onmouseout="change1(this)" id="E9">EXPERIMENT-9</a><br/><br/>
+
+		<a href="JS/cgpaCalculator.html" class="color2" onmouseover="change(this)" onmouseout="change1(this)" id="E8">EXPERIMENT-8</a><br/><br/>
+		<a class="color1" onmouseover="change(this)" onmouseout="change1(this)" id="E7">EXPERIMENT-7</a><br/><br/>
+				<ul style="position:relative;margin-top:-10px;">
+				<li class="color1"><a href="JS/PayFee.html"  id="E7.1">Exp 7.1</a></li><br/>
+				<li class="color2"><a href="JS/piglatin1.html"  id="E7.2">Exp 7.2</a></li><br/>
+				<li class="color1"><a href="JS/BgColorAnimate.html" id="E7.3">Exp 7.3</a></li><br/>
+				<li class="color2"><a href="JS/AnimateImage.html" id="E7.4">Exp 7.4</a></li><br/>
+				</ul>				
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,79 @@
+<html>
+<head><title>Student's Personal Info using DOM</head>
+<body style="background-image:url('../Images/bg.png');">
+<div style="width:400px;height:auto;background-color:rgb(48, 70, 232);opacity:.9;position:fixed;top:50px;left:450px;text-align:center;overflow:auto;">
+<h1>Personal Details</h1>
+<form>
+	<p style="font-size:15pt;font-weight:bold;">Name&nbsp;	&nbsp;&nbsp;
+	<input type="text" id="uname" value=" "/><br/><br/>
+	Date of Birth&nbsp;&nbsp;
+	<input type="date" id="dob" value=" "/><br/><br/>
+	Age&nbsp;&nbsp;
+	<input type="text" id="age" value=" "/><br/><br/>
+	Year of Study&nbsp;&nbsp;
+	<select id="yr">
+	<option>Select</option>	
+	<option value="I">I</option>	
+	<option value="II">II</option>
+	<option value="III">III</option>
+	<option value="IV">IV</option>
+	</select><br/><br/>
+	Community&nbsp;&nbsp;
+	<input type="radio" name="com" value="OC"/>OC
+	<input type="radio" name="com" value="BC" />BC
+	<input type="radio" name="com" value="MBC"/>MBC<br/><br/>
+	
+	Skills&nbsp;&nbsp;
+	<input type="checkbox" name="skills" value="C"/>C
+	<input type="checkbox" name="skills" value="C++" />C++
+	<input type="checkbox" name="skills" value="Java"/>Java<br/><br/>
+	Emial-ID&nbsp;&nbsp;
+	<input type="email" id="mail" value=" " required/><br/><br/>
+	Password&nbsp;&nbsp;
+	<input type="password" id="pass" /><br/><br/>
+	<input type="button" name="caste" value="Register" onclick="Move()"/><br/><br/>
+	</p>
+	
+</form>
+<p style="color:blue;font-size:20;" id="res"></p>
+</div>
+<script>
+	
+	var comm,age,para,l,sk,year,skill=" ";
+	
+	function Move()
+	{
+		age=document.getElementById("age").value;
+		year=document.getElementById("yr").value;
+		para=document.getElementById("res");
+		comm=document.getElementsByName("com");
+		sk=document.getElementsByName("skills");
+
+		l1=comm.length;
+		l2=sk.length;
+		//document.write("Your age: "+age);
+		for(var i=0;i<l1;i++)
+		{
+			if(comm[i].checked)
+			{	c=comm[i].value;
+				break;
+			}
+		}
+
+		for(var j=0;j<l2;j++)
+		{
+			if(sk[j].checked)
+			{	skill+=sk[j].value+" ";
+				
+			}
+		}		
+		para.innerHTML="Your are in: "+year+"<br/>Your Age: "+age+"<br/>You belong to:"+c+"<br/>Your Skills:"+skill;
+	//	if(parseInt(age)>=18)
+	//		window.location.href="../table.html";
+			//http://www.w3schools.com";
+	}
+
+</script>
+
+</body>
+</html>

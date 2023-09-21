@@ -1,0 +1,51 @@
+<html>
+<head>
+	<style>
+		h1{
+			text-align:center;
+			color:yellowgreen;
+		}
+	</style>
+</head>
+<body id="doc1">
+<h1  id="kec"> Kongu Engineering College</h1>
+<h1 id="cse"> Deparment of CSE</h1>
+
+<script type="text/javascript">
+var color1=["red","pink","purple","orange","yellow","green","blue","violet"];
+var color2=["violet","blue","yellow","brown","orange","lightblue","pink","red"];
+var l=color1.length;
+var id,i,cl=5;
+var bg=document.getElementById("doc1");
+var head1=document.getElementById("kec");
+var head2=document.getElementById("cse");
+var size=40;
+function change()
+{
+i=0;
+id=setInterval(animate,1000);
+}
+function animate()
+{
+	if(i<l)
+	{
+		
+		
+		size+=2;
+		bg.style.backgroundColor=color1[i];
+		head1.style.backgroundColor=color2[i];
+		head1.style.fontSize=size+'px';
+		head2.style.color=color2[i];
+		i++;
+	}
+	else
+	{
+		clearInterval(id);
+	}
+}
+
+window.addEventListener("load",change,false);
+</script>
+</body>
+</html>
+

@@ -1,0 +1,55 @@
+<html>
+<head>
+	<style>
+		#doc1{
+			background-image:url("../Images/bg.png");
+			background-size:cover;
+		}
+		div{
+			width:400px;
+			height:450px;
+			background-color:orange;//lightblue;
+			opacity:0.9;
+		}
+		
+	</style>
+</head>
+<body id="doc1">
+<h2 style="color:red;background-color:gold;width:500px;"> Simple Animation using Document Object Model</h2>
+<h1 style="color:pink;background-color:blue;width:500px;font-weight:bold;"> Click on the Picture to Animate</h1>
+
+<div>
+<img id="pic1" src="../Images/Banner.jpg" width="80" height="120"/>
+</div>
+<script type="text/javascript">
+
+var img;
+var id,x,y; 
+img=document.getElementById("pic1");
+x=img.width;
+y=img.height;
+function animate()
+{
+	id = setInterval(enlarge, 10);
+}
+
+function enlarge()
+{
+
+	if(y<=375)
+	{
+		x+=1;
+		y+=1;
+		img.setAttribute("width",x+"px");
+		img.setAttribute("height",y+"px");
+	}
+	else 
+	{
+		clearInterval(id);
+	}
+}
+img.addEventListener("click",animate,false);
+</script>
+</body>
+</html>
+

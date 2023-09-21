@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Example of HTML Menu</title>
+<style type="text/css" media="screen">
+body{
+	background-image:url("bgst1.jpg");//,url("bgst.jpg");
+	background-repeat:no-repeat,repeat;
+	//background-position:50% 250px;
+	  background-size: cover;
+	//opacity:.5;
+}
+#KEC{
+	z-index:1;
+	width:350px;
+	height:130px;
+	border-top-right-radius:70px;
+	border-bottom-right-radius:70px;
+	background-color:orange;
+//	background-image:url("");
+	background-size: 100px;
+	background-repeat:no-repeat;
+	font-size:30pt;
+	position:relative;
+	top:-10;
+}
+/*#logo{
+	width:100px;
+	height:100px;
+}*/
+#titl{
+	font-size:25pt;
+	font-weight:bold;
+	color:purple;
+	float:right;
+	position:relative;
+	top:-30;right:15;
+}
+#hmenu{
+	width:70%;
+	height:130px;
+	border-top-left-radius:70px;
+	border-bottom-left-radius:70px;
+	background-color:purple;
+	right:0px;
+	position:absolute;
+	top:0;
+}
+#hmenu ul {
+padding-left:15; list-style:none;
+}
+#hmenu li {
+float:left; 
+position:relative; 
+padding-right:30; 
+display:block;
+}
+#hmenu li a{
+	color:aqua;
+	font-size:16pt;
+	text-decoration:none;
+}
+#hmenu li ul {
+    display:none;
+position:absolute;
+
+}
+#hmenu li ul a{
+	color:orange;
+}
+#hmenu li:hover ul{
+    display:block;
+    background:purple;
+height:auto; width:8em; 
+
+}
+#ad{
+	height:200px;
+	width:200px;
+	background-image:url("CollaborativeLearning.jpg");
+	background-size: cover;
+	position:relative;
+	float:right;
+	top:60px;
+	//background-attachment:scroll;
+}
+	
+
+</style>
+</head>
+<body>
+
+<div id="KEC">
+<div id="logo">
+	<img src="KEC_Transform.jpg" style="width:100px;height:100px;position:absolute;top:20px;left:15px;"/>
+</div>
+	<p id="titl">Kongu<br/>
+	Engineering<br/>
+	College</p>
+</div>
+
+<div id="hmenu">
+        <ul> <li><a href="#">News</a>
+                <ul> <li><a href="#">National</a></li> <li><a href="#">International</a></li> <li><a href="#">Sport</a></li> <li><a href="#">Hollybood</a></li> </ul>
+            </li>
+            <li>
+            <a href="#">Technology</a>
+		<ul> <li><a href="#">IT/Software</a></li> <li><a href="#">Hardware</a></li> <li><a href="#">Iphone</a></li> <li><a href="#">Neuro-Science</a></li> </ul>
+                
+            </li>
+            <li>
+            <a href="#">Sports</a>
+                <ul> <li><a href="#">Cricket</a></li> <li><a href="#">Tenis</a></li> <li><a href="#">Badminton</a></li> <li><a href="#">Hockey</a></li> </ul>
+            </li>
+            <li>
+            <a href="#">Country</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+        </ul>
+</div>
+
+<div id="ad">
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,461 @@
+<html>
+	<head>
+	<title>Menu Bar</title>
+	<link rel="stylesheet" type="text/css" href="../CSS/flip.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/Events.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/foot.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/cs_sidebar.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.example {
+			  display: flex;
+			  flex-direction: column;
+		}
+		.main {  
+			//display: flex;
+			height:100%;
+			//background-color:grey;
+		}
+	
+		header img{
+			height:80px;width:80px;
+		}
+		.head1{
+			//background-color:grey;//orange;
+			width:70%;
+		}
+		header{
+			display:flex;
+			background-color:dodgerblue;//orange;
+			width:100%;height:150px;
+		}
+		
+		.hmenu{
+			width:80%;height:150px;
+			background-color:yellowgreen;
+			border-radius: 150px 0px 0px 0px;
+		}
+		.submenu{
+			display:none;
+			position:absolute;
+			height:180px; width:auto;
+			background-color:grey;
+			top:30px;left:-130px;
+			//column-count:2;
+			z-index:3;
+		}
+		.hmenu li div a{
+			border-bottom:1px solid;
+			padding:10px;
+			//width:200px;
+		}
+		.submenu div{
+			width:250px;
+		}
+		.hmenu li:hover .submenu{
+			display:flex;
+		}
+		header ul{
+			
+			position:relative;
+			right:0px;top:90px;
+			height:50px;
+			
+		}
+		header li{
+			list-style:none;
+			display:inline;
+			//float:right;
+			position:relative;
+			top:10px;
+			padding-right:15px;
+			font-size:15pt;
+		}
+		header li a{
+			text-decoration:none;
+			color:white;
+		}
+		#prev{
+		font-size:18pt;
+		color:white;
+		position:absolute;
+		top:370px;
+		background:none;
+		background-color:black;
+		font-family:cambria;
+		}
+		#next{
+		font-size:18pt;
+		color:white;
+		position:absolute;
+		top:370px;right:10px;
+		background-color:black;
+		font-family:cambria;
+		}
+		.smenu{
+			width:250px;height:250px;
+			background-color:black;
+			position:absolute;
+			top:270px;right:50px;
+			opacity:0.5;
+		}
+		.smenu_content{
+			width:250px;height:250px;
+			position:absolute;
+			top:270px;right:50px;
+			//opacity:0.5;
+		}
+		.smenu_content li{
+			padding-top:15px;
+			list-style:none;
+		}
+
+		.smenu_content li a{
+			text-decoration:none;
+			color:dodgerblue;
+			font-size:17pt;
+		}
+	</style>
+	
+	</head>
+	<body>
+		
+<div class="example">
+	  <header>
+	 <div class="head1"> <h1>KONGU ENGINEERING COLLEGE</h1>
+	<img src="../Images/KEC_Transform1.png" style="width:80px;height:50px;position:relative;left:0px;top:10px;"/>
+	<img src="../Images/Kongu Logo2.png" style="width:80px;height:50px;position:relative;right:-350px;top:10px;"/></div>
+	<div class="hmenu"><nav>
+	      <ul>  
+		    <li><a href="#">Home</a></li>  
+		    <li><a href="#">About Us</a></li>  
+		    <li><a href="#">Departments</a>
+			<!--<ul>
+			<li><a href="#">Civil Engineering</a></li>	
+			<li><a href="#"> Mechanical Engineering</a></li>	
+			<li><a href="#">Automobile Engineering</a></li>	
+			<li><a href="#">Mechatronics Engineering</a></li>	
+			<li><a href="#"> Electrical and Electronics Engineering</a></li>	
+			<li><a href="#"> Electronics and Communication Engineering</a></li>	
+			<li><a href="#">Electronics and Instrumentation Engineering</a></li>	
+			<li><a href="#">Computer Science and Engineering</a></li>	
+			<li><a href="#">Information Technology</a></li>	
+			</ul>-->
+			<div class="submenu">
+				
+			<div><a href="#">Civil Engineering</a>	
+			<a href="#"> Mechanical Engineering</a>	
+			<a href="#">Automobile Engineering</a>	
+			<a href="#">Mechatronics Engineering</a></div>
+			<div><a href="#"> Electrical and Electronics Engineering</a>
+			<a href="#"> Electronics and Communication Engineering</a>
+			<a href="#">Electronics and Instrumentation Engineering</a>
+			<a href="#">Computer Science and Engineering</a>
+			<a href="#">Information Technology</a></div>
+			</div>
+		</li>  
+		    <li><a href="#">COE</a></li>  
+		    <li><a href="#">Placement</a></li>  
+		  </ul>  
+	    </nav></div>
+	  </header>
+	  <main class="main">
+	     <div class="content">
+	<input type="button" id="prev" value="<" onclick="myFunction2(this)"/>
+     
+	<img id="pic1" src="../Images/mainbuilding.jpg" style="width:100%;height:450px;"/>
+	<input type="button" id="next" value=">" onclick="myFunction1(this)"/>
+
+	    </div>
+	 <nav class="smenu">
+	</nav>
+	<nav class="smenu_content">
+	      <ul >  
+		    <li><a href="#">Admissions Open</a></li>  
+		    <li><a href="#">Placement Status</a></li>  
+		    <li><a href="#">Patents Obtained</a></li>  
+		    <li><a href="#">Awards & Ranking</a></li>  
+		  </ul>  
+	    </nav>
+	<!--Side Menu-->
+	
+	<!--Side Bar-->
+	<button class="openbtn" onclick="openNav()"> <i class="fa fa-bars"></i>  </button>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<div>
+          <h3>Cells for Student Support</h3>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+  <div>
+          <h3>Fee and Student Details</h3>
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    
+                </ul>
+            </div>
+</div>
+
+	<div id="main">
+ 		
+  	</div>
+
+	<!--Main Events-->
+	<div id="mEvents">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 1</h3>
+               		<img src="../Images/flipImg1.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 2</h3>
+                <img src="../Images/flipImg2.gif"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 3</h3>
+                                <img src="../Images/flipImg3.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 4</h3>
+                                  <img src="../Images/flipImg4.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+</div>
+<!--Daily Events-->
+
+<div class="right1">
+             <h2 style="color: #666666;text-align:center;">Events Calender</h2>
+                <br>
+<marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()" height="500px" width="100%" align="center">
+                <p id="events"> 
+                <a href="#">CSIR Sponsored National Seminar on Novelty in Applications of Graph Theory to The Internet of Things</a>18&19 Jul 2019<br/>
+                 <br/>
+                <a href="#">Two days workshop on Design of Solar PV and Thermal Energy systems </a>19&20 Jul 2019<br/>
+                 <br/>
+                <a href="#">Hands-on Workshop on Introduction to MEAN Stack Development</a>20 Jul 2019<br/>
+                <br/>
+                <a href="#">National Seminar on Adanced Microstructure Analysis of Concrete and its Inetrpretation</a> 25&26 Jul 2019<br/>
+                <br/>
+                <a href="#">CSIR Sponsored National Seminar on Recent Trends and Challenges in Bayesian Statistics for Big Data Analytics </a>26 Jul 2019<br/>
+   	<br/>
+                <a href="#">Hands-on Training to create Hybrid App (React Native with AngularJS, Android, iOS)</a>26 Jul 2019<br/>
+                 <br/>
+                <a href="#">SERB Sponsored Seminar on Biodegradable and Recyclable Lightweight Polymer Materials forAutomobile Applications</a>26&27 Jul 2019<br/>
+              </p>
+	</marquee></div>
+
+
+
+	  </main>
+	  <footer>
+	    <!--Footer Content-->
+
+	<div class="foot">
+        <div style="width:100%;text-align:center;">
+                 <h3>Search this website by keywords or browse from sections below</h3>
+                 <input type="text" placeholder="Search.." name="search" style="height:30px;"/>
+                <input  type="submit" value="Search" style="height:30px;width:100px;"/>
+       </div><br/>
+
+<div class="foot1">
+          <div>
+                <h3>Quick Find</h3>
+                  <ul>
+                    <li><a href="#">Administration</a></li>
+                    <li><a href="#">KEC Virtual Tour</a></li>
+                    <li><a href="#">KEC Web album</a></li>
+                    <li><a href="#">Patent Obtained</a></li>
+                    <li><a href="#">Kongu CRS</a></li>
+                </ul>
+            </div>
+	<div>
+          <h3>Quick Find</h3>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+            <div>
+          <h3>Quick Find</h3>
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+           <div>
+          <h3>Quick Find</h3>
+                <ul>
+                    <li><a href="#">Library Committee</a></li>
+                    <li><a href="#">Staff Handbook</a></li>
+                    <li><a href="#">Non-teaching Staff</a></li>
+                    <li><a href="#">Audit Report</a></li>
+                    <li><a href="#">Mandatory Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+   <div class="foot2">
+                 <ul >
+                <li><a href="#">About KEC</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul><br/>
+	    <h4 style="text-align:right;color:white;">©2019 KEC.All rights reserved</h4>
+        </div>
+  </div>
+
+	  </footer>
+</div>
+
+<script>
+	var imgs=["mainbuilding.jpg","CollaborativeLearning.jpg","bgst1.jpg","DigitalIndia1.jpg","flipImg1.jpg","GreenCampus.jpg","ITPark1.jpg"];
+
+var i=0,j;
+
+
+//var Next=document.getElementById("next");
+//var Prev=document.getElementById("prev")
+
+var pic=document.getElementById("pic1");
+
+//bg.setAttribute("width","100%");
+//bg.setAttribute("height","450px");
+
+/*function myFunction1() 
+{
+
+pic.src="../Images/"+imgs[i];
+
+i++;
+
+var l=imgs.length-1;
+
+if(i>l)
+
+pic.src="../Images/"+imgs[l];
+
+}
+
+
+
+function myFunction2() 
+{
+
+i--;
+
+pic.src="../Images/"+imgs[i];
+
+if(i<0)
+
+pic.src="../Images/"+imgs[0];
+
+}
+*/
+function change()
+{
+j=0;
+id=setInterval(animate,3000);
+}
+function animate()
+{
+	var l=imgs.length;
+
+	if(j<l)
+	{
+		
+		pic.src="../Images/"+imgs[j];
+
+		j++;
+
+		
+		
+	}
+
+	else if(j>=l)
+	{
+
+		j--;
+
+		pic.src="../Images/"+imgs[j];
+
+
+	}
+	else
+	{
+		clearInterval(id);
+	}
+}
+
+//display side menu
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+window.addEventListener("load",change,false);
+</script>
+
+	</body>
+</html>

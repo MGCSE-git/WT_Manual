@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS</title>
+<link rel="stylesheet" type="text/css" href="../Styles/cs_style.css">
+<style>
+	body {
+  		font-family: cambria, sans-serif;
+	}
+	#mhead{
+			position:fixed;
+			width:100%;
+			//z-index:3;
+	}
+	#logo{
+			float:left;
+//			background-color:dodgerblue;
+			background-image: linear-gradient(to left,black,grey);
+			//box-shadow: 10px 10px 5px white;
+			height:130px;
+			width:375px;
+			position:fixed;
+			top:0;left:0;
+			z-index:1;
+	}
+	#titl{
+			font-size:28pt;
+			font-weight:bold;
+			color:dodgerblue;//purple;
+			float:right;
+			margin-right:30px;
+			margin-top:1px;
+//			position:absolute;top:0px;
+			/*top:-50;
+			right:0;*/
+	}
+	#cshead{
+		text-align:center;color:white;
+		width:920px;height:131px;
+		border-left-radius:50px;
+		font-size:30pt;
+		position:absolute;
+		left:370px;
+		top:-42px;
+		background-image: linear-gradient(to right,dodgerblue,grey);
+	}
+	.city h3{
+		color:brown;
+		//background-color:grey;
+	}
+	#cse{
+		width:70%;height:500px;
+		position:absolute;
+		left:380px;top:150px;
+		z-index:3;
+		overflow:scroll;
+	}
+	 .tabs a{
+		color:black;
+		font-size:15pt;
+		font-weight:bold;
+		display:inline;
+		padding:10px;
+		position:relative;
+		top:-5px;
+		text-decoration:none;
+		//background-color:grey;
+	}
+	.tabs a:hover{
+		background-color:black;
+		color:white;
+	}
+	.tabs{
+		//background-color:black;
+		//background-image: linear-gradient(to right,dodgerblue, black,grey);
+		height:40px;
+		position:fixed;
+		left:380px;top:100px;
+	}
+	#d3{
+		display:flex;
+		width:auto;
+	}
+	p{
+		margin-left:20px;
+	}
+	th,td{
+		text-align:left;
+		margin-right:6px;
+	}
+	#cse li{
+	//	margin-left:20px;
+		text-align:justify;
+	}		
+	#pos{
+		display:flex;
+	}
+
+</style>
+
+
+</head>
+<body>
+<div id="mhead">
+	
+		<div id="logo">		
+		<img src="../Images/KEC_Transform1.png" style="width:120px;height:100px;position:absolute;top:10px;left:15px;"/>
+		<img src="../Images/Kongu Logo2.png" style="width:120px;height:50px;position:fixed;top:75px;right:0px;"/>
+	<p id="titl">Kongu<br/>
+	Engineering<br/>
+	College</p>
+	</div>
+  <h2 id="cshead">Department of Computer Science and Engineering</h2>		
+</div>
+<div class="tabs">
+  <a href="#" onclick="openCity('Home')">Home</a>
+  <a href="#" onclick="openCity('Highlights')">Highlights</a>
+  <a href="#" onclick="openCity('Laboratories')">Laboratories</a>
+  <a href="#" onclick="openCity('Library')">Library</a>
+</div>
+
+
+
+<!-- CSE Events-->
+<div class="Events">
+<h2>Events</h2>
+
+<div class="event"><h4>Event 1</h4><img src="../Images/E1.jpg" /></div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<div class="event"><h4>Event 2</h4><img src="../Images/E2.jpg" /></div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<div class="event"><h4>Event 3</h4><img src="../Images/E3.jpg" /></div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+<div class="event"><h4>Event 4</h4><img src="../Images/E4.jpg" /></div>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+</div>
+
+
+<div id="cse">
+<!--  <h2 style="text-align:center;color:green;">Department of Computer Science and Engineering</h2>-->
+ 
+
+
+<div id="Home" class="city">
+  <div>
+      <h3>Programmes Offered</h3>
+    <div><table style="margin-left:20px;" width="300" border="0">
+  <tr>
+<th>Programme</th>
+<th>Intake</th>
+  </tr>
+<tr><td>B.E</td>
+  <td>240</td></tr>
+<tr><td>M.E CSE</td>
+  <td>25</td></tr>
+<tr><td>PhD</td>
+  </tr>
+</table>
+</div>
+</div>
+<div id="d3">
+<div style="width:400px;text-align:justify;margin-right:20px;">
+      <h3>Vision</h3>
+      <p> To be a centre of excellence for nurturing competent computer professionals of high calibre and quality for catering to the ever-changing needs of the industry and society </p>
+   </div>
+<div>
+     <h3>Mission</h3>
+      <p>Department of Computer Science &amp; Engineering  is committed
+to    </font>    
+
+      <ul >
+      <li> Develop innovative, competent and ethically strong computer engineers to meet global challenges. </li>
+      <li>Foster consultancy and basic as well as applied research activities to solve real world problems. </li>
+      <li> Endeavour for constant upgradation of technical expertise to cater to the needs of the industry and society </li>
+    </ul>
+    </div>
+   </div> 
+ <div>
+    
+      <h3>Programme Educational Objectives</h3>
+   <p>   Graduates of Computer Science and Engineering will
+      <ul>
+      <li>Utilize the fundamental knowledge of basic sciences and engineering to succeed in their professional career. </li>
+      <li> Analyze, design, develop and verify computer-based solutions to real world problems</li>
+      <li>Exhibit soft skills, ethical code of conduct and ability for life-long learning </li>
+  </ul>
+</p>	
+	
+    </div>
+ <div>
+    
+      <h3>Programme Outcomes</h3>
+      <p><strong> Engineering Graduates will be able to:</strong>
+   <div id="pos">
+	<div><ol type="1">
+        <li><strong> Engineering knowledge:</strong> Apply the knowledge of mathematics, science, engineering fundamentals, and an engineering specialization to the solution of complex engineering problems </li>
+        <li><strong> Problem analysis:</strong> Identify, formulate, research literature, and analyze complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences, and engineering sciences </li>
+        <li><strong> Design/development of solutions:</strong> Design solutions for complex engineering problems and design system components or processes that meet the specified needs with appropriate consideration for the public health and safety, and the cultural, societal, and environmental considerations </li>
+        <li><strong> Conduct investigations of complex problems:</strong> Use research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of the information to provide valid conclusions </li>
+        <li><strong> Modern tool usage:</strong> Create, select, and apply appropriate techniques, resources, and modern engineering and IT tools including prediction and modeling to complex engineering activities with an understanding of the limitations </li>
+        <li><strong> The engineer and society:</strong> Apply reasoning informed by the contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to the professional engineering practice </li></ol></div>
+	<div><ol type="1" start="7">
+        <li><strong> Environment and sustainability:</strong> Understand the impact of the professional engineering solutions in societal and environmental contexts, and demonstrate the knowledge of, and need for sustainable development </li>
+        <li><strong> Ethics:</strong> Apply ethical principles and commit to professional ethics and responsibilities and norms of the engineering practice </li>
+        <li><strong> Individual and team work:</strong> Function effectively as an individual, and as a member or leader in diverse teams, and in multidisciplinary settings </li>
+        <li><strong> Communication:</strong> Communicate effectively on complex engineering activities with the engineering community and with society at large, such as, being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions </li>
+        <li><strong> Project management and finance:</strong> Demonstrate knowledge and understanding of the engineering and management principles and apply these to one&rsquo;s own work, as a member and leader in a team, to manage projects and in multidisciplinary environments </li>
+        <li><strong> Life-long learning:</strong> Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change </li>
+      </ol></div>
+</div>
+
+     </p>
+ </div>
+ <div>
+    <h3>Programme Specific Outcomes</h3>
+      <ol type="1">
+        <li><strong> </strong>
+         <strong> Foundations of Computer Science</strong> : Ability to use the mathematical and 
+computing knowledge to propose viable ideas and solutions to solve real 
+world problems</li>
+        <li>
+         <strong>Software design and Development:</strong> Ability to develop computer based systems using engineering skills, 
+knowledge of software design process, programming languages and tools
+        </li>
+      </ol>
+      
+ </div>
+
+
+</div>
+
+
+<div id="Highlights" class="city" style="display:none">
+    <div>
+      <h3>HIGHLIGHTS</h3>
+    </div>
+    <ul >
+      <li> Secured many ranks and gold medals in Bharathiar University, Coimbatore and Anna University, Chennai </li>
+      <li> Consistent improvement in placement and higher education </li>
+      <li> Funded Research Projects: 3 Completed of worth Rs. 8.47 lakhs and 2 Ongoing of worth Rs. 25.62 lakhs </li>
+      <li> Organized funded seminars and workshop programmes of worth Rs. 20.41 lakhs </li>
+      <li> MoUs with leading industries like Infosys, TCS and CDAC. Received best Single Point Of Contact award from Infosys for the year 2016 </li>
+      <li> Organized 3 International Conferences and 8 National Conferences </li>
+      <li> 43 Research Scholars completed PhD and 51 are pursuing from CSE research centre </li>
+      <li> Received overall best performing department award for the academic year 2016-2017. Also won the best performing department in Enthusia, Women Development Cell and Higher Education/Competitive Examination Cell </li>
+      <li> Awards won by faculty: Best Reviewer by IEEE Access, Shri P.K. Das Memorial Best faculty, Outstanding Women in Engineering &ndash; CSE by VIFA, Chennai </li>
+      <li> Awards won by students: Gandhian Young Technological Award, Chief Minister Excellence Award, CTS Best student Award, Student Innovative Best Projects Award </li>
+      <li> Best CSI Student Branch award for the year 2015 </li>
+      <li> Fetched overall best outgoing student award for 5 times </li>
+      <li> Several prizes and awards won by students from premier institutions like IITs, NITs and ISI </li>
+      <li> Around 10% of Alumni established as successful entrepreneurs </li>
+      <li> National and International representation in Sports and Games</li>
+    </ul>
+</div>
+
+<div id="Laboratories" class="city" style="display:none">
+    <h2>Paris</h2>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Library" class="city" style="display:none">
+
+  <h2>Tokyo</h2>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+</div>
+<script>
+var acc = document.getElementsByClassName("event");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(cityName).style.display = "block";  
+}
+
+
+
+</script>
+
+</body>
+</html>

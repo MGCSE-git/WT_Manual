@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+ <html>
+<head>
+ <meta charset = "utf-8">
+ <style type = "text/css">
+.box { border: 1px solid black; padding: 10px }
+ </style>
+<title>Switch Content Asynchronously</title>
+ <script>
+ var asyncRequest; // variable to hold XMLHttpRequest object
+
+ // set up event handlers
+function getContent( url )
+ {
+ // attempt to create XMLHttpRequest object and make the request
+	try
+	 {
+		asyncRequest = new XMLHttpRequest(); // create request object
+asyncRequest.addEventListener(
+"readystatechange", stateChange, false);
+asyncRequest.open( "GET", url, true ); // prepare the request
+asyncRequest.send( null ); // send the request
+	}
+	catch ( exception )
+	{
+		alert( "Request failed." );
+	}
+} 
+
+function stateChange()
+{
+	if (asyncRequest.readyState == 4 && asyncRequest.status == 200 )
+	{
+		document.getElementById( "contentArea" ).innerHTML =
+		asyncRequest.responseText; // places text in contentArea
+	 } // end if
+ } 
+
+function clearContent()
+{
+	 document.getElementById( "contentArea" ).innerHTML = "";
+ }
+
+//http://test.deitel.com/iw3htp5/ch16/fig16_05/SwitchContent.html
+</script>
+ </head>
+ <body>
+ <h1>Mouse over a book for more information.</h1>
+ <img id = "cpphtp" alt = "C++ How to Program book cover"
+ src = "http://test.deitel.com/images/thumbs/cpphtp8.jpg">
+ <img id = "iw3htp" alt = "Internet & WWW How to Program book cover"
+ src = "http://test.deitel.com/images/thumbs/iw3htp5.jpg">
+ <img id = "jhtp" alt = "Java How to Program book cover"
+ src = "http://test.deitel.com/images/thumbs/jhtp9.jpg">
+ <img id = "vbhtp" alt = "Visual Basic 2010 How to Program book cover"
+ src = "http://test.deitel.com/images/thumbs/vb2010htp.jpg">
+ <img id = "vcshtp" alt = "Visual C# 2010 How to Program book cover"
+ src = "http://test.deitel.com/images/thumbs/vcsharp2010htp.jpg">
+ <img id = "javafp" alt = "Java for Programmers book cover"
+ src = "http://test.deitel.com/images/thumbs/javafp.jpg">
+ <div class = "box" id = "contentArea"></div>
+ </body>
+ </html

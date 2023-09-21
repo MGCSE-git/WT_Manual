@@ -1,0 +1,46 @@
+<html>
+
+<body>
+	<form>
+	First No.<input type="text" id="t1"/><br/>
+	Second No.<input type="text" id="t2"/><br/>
+	<input type="radio" id="x1" name="rate" value="+" onchange="calc(this.value)"> Add
+	<input type="radio" id="x2" name="rate" value="-"  onchange="calc(this.value)" checked="checked"> Sub
+	<input type="radio" id="x3" name="rate" value="*"  onchange="calc(this.value)"> Multiply
+	<br/>
+	<!--<input type="button" id="bt" value="Get" onclick="calc()"/>-->
+	</form>
+	<h2 id="res"> You have selected:</h2>
+	<script>
+	var x,y,z,i;
+	var a,b;
+	x=document.getElementsByName("rate");
+	y=document.getElementById("res");
+	a=document.getElementById("t1");
+	b=document.getElementById("t2");
+
+	function calc(v)
+	{
+		var n1,n2,n3;
+		n1=parseInt(a.value);
+		n2=parseInt(b.value);
+	/*	for(i=0;i<x.length;i++)
+		{
+			if(x[i].checked)
+				z=x[i].value;
+		}*/
+		y.innerHTML+=v;	
+		if(v=="+")
+			n3=n1+n2;
+		else if(v=="*")
+			n3=n1*n2;
+		else
+			n3=n1-n2;
+		y.innerHTML+="<br/>"+n1+", "+n2+"<br/>Result is: "+n3;
+		
+	}
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+﻿<html>
+<head><title>Flip events</title>
+<style>
+#mEvents{
+	display:flex;
+}
+.back {
+	width: 300px;
+	height: 260px;
+	position: absolute;
+	top: 300px;
+	left: 0px;
+	background-color:green;
+
+}
+.flipper {
+	position: relative;
+	width:100%;
+}
+.front {
+	width: 300px;
+	height: 250px;
+	position: fixed;
+	top:0px;
+	display:inline;
+	padding:10px;
+	background-color:rgb(191, 255, 0);
+}
+.front img{
+//	position:relative;
+	width:100%;
+	height:200px;
+}
+.back p{
+	text-align:justify;
+	color:rgb(191, 255, 0);
+	padding:20px;
+}	
+.front h3{
+	text-align:center;
+}
+</style>
+</head>
+<div id="mEvents" onclick="collect()">
+
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 1</h3>
+               		<img src="../Images/flipImg1.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 2</h3>
+                			<img src="../Images/flipImg2.gif"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+
+
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 3</h3>
+	                                <img src="../Images/flipImg3.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+
+
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 4</h3>
+	                                  <img src="../Images/flipImg4.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+
+</div>
+<!--Flip content url - https://davidwalsh.name/css-flip-->
+
+<script>
+	function collect()
+	{
+		var pics=document.images;
+		var para=document.getElementsByClassName("back");
+		var flip=document.getElementsByClassName("flipper");
+		for(var i=0;i<pics.length;i++)
+		{
+			pics[i].setAttribute("style","border:6px solid red");
+		}
+		for(var j=0;j<para.length;j++)
+		{
+			para[j].setAttribute("style","border-radius:50px");
+		}
+	}
+</script>
+</body>
+</html>

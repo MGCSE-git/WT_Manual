@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html >
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="Styles/SideNavBar.css">
+<script src="Script/SideNavBar.js"></script>
+<style type="text/css">
+		#mhead{
+			position:fixed;
+			z-index:3;
+		}
+		#outer{
+			position:fixed;
+		}
+		#logo{
+			float:left;
+			border-top-right-radius:70px;
+			border-bottom-right-radius:70px;
+			background-color:#F78B2D;//#BA5536;//lightgrey;//red;
+			height:130px;
+			width:375px;
+			position:fixed;
+			top:0;left:0;
+			z-index:1;
+			
+		}
+		#hmenu{
+			float:right;
+			width:80%;
+			height:130px;
+			//border-top-left-radius:70px;
+			//border-bottom-left-radius:70px;
+			background-color:#7AA802;//#693D3D;//rgb(87, 37, 13);//hsla(0, 100%, 30%, 0.3);//tomato;//black;//purple;
+			position:fixed;
+			top:0;right:0;
+			
+		}
+		#titl{
+			font-size:25pt;
+			font-weight:bold;
+			color:#283655;//rgb(83, 91, 64);//green;//purple;
+			float:right;
+			margin-right:30px;
+			margin-top:5px;
+			/*position:relative;
+			top:-50;
+			right:0;*/
+			
+		}
+		
+#hmenu1 ul {
+padding-left:10px; list-style:none;
+position:relative; 
+margin-left:150px;
+top:70px;
+}
+#hmenu2 ul {
+padding-left:10px; list-style:none;
+position:fixed;//relative; 
+//float:right;
+right:0px;
+top:0;
+}
+#hmenu1 li {
+float:left; 
+position:relative; 
+//padding:10px; 
+margin-left:15px;
+display:block;
+
+}
+#hmenu2 li  {
+float:left; 
+position:relative; 
+//padding:10px; 
+margin-right:15px;
+display:block;
+
+}
+/*#hmenu2{
+	margin-right:10px;
+}*/
+#hmenu1 li a{
+	color:#283655;//white;//rgb(83, 91, 64);//yellowgreen;//orange;
+	font-size:15pt;
+	text-decoration:none;
+	text-align:center;
+	margin:5px;
+	}
+#hmenu1 >ul>li:hover{
+	background-color:#F78B2D;//grey;
+	border-radius:4px;
+}
+#hmenu2 li a{
+	color:white;//orange;
+	font-size:13pt;
+	text-decoration:none;
+}
+#hmenu1 li ul,#hmenu2 li ul {
+    display:none;
+position:absolute;
+height:auto; width:130px;
+top:30px;
+//z-index:2;
+}
+#hmenu1 li ul a,#hmenu2 li ul a{
+	color:rgb(83, 91, 64);//green;
+	font-size:13pt;
+	position:relative;
+	margin-left:0px;
+	width:25px;
+}
+#hmenu1 li ul a:hover,#hmenu2 li ul a:hover{
+	background-color:white;
+}
+/*#hmenu1 ul li:hover{
+	background-color:grey;
+	border-radius:6px;
+}*/
+
+#hmenu1 li:hover ul{
+    display:block;
+    background:#F78B2D;//lightgrey;
+height:12em; width:20em; 
+margin-left:0px;
+}
+#hmenu2 li:hover ul{
+    display:block;
+    background:purple;
+//height:auto; width:auto; 
+left:0px;
+}
+/*#col{
+	-moz-column-count:2;
+	-moz-column-width:150px;
+}*/
+#mainImg{
+	position:absolute;
+	top:100px;left:0px;
+	width:100%;
+	z-index:-1;
+}
+/*#mainImg div{
+	background-color:black;
+	//opacity:.7;
+	position:relative;
+	top:100px;left:0px;
+	width:100%;
+	//z-index:-1;
+}*/
+.right1{
+		height:250px;width:400px;
+		background-color:grey;
+		opacity:85;
+		overflow:hidden;//scroll;
+		
+		border-bottom-left-radius:40px;
+		border-top-right-radius:40px;
+		position:fixed;
+		top:220px;right:30px;
+		z-index:-1;
+	}
+	
+	.right1 a{
+		text-decoration:none;
+		margin-top:10px;
+		font-weight:bold;
+		color:#F78B2D;
+		}
+.right1 li{
+	width:90%;
+	//background-color:#7AA802;//white;
+	list-style:none;
+}	
+	#events{
+	position:relative;	
+	left:0px;
+	}
+
+#mEvents{
+	display:flex;
+	position:absolute;
+	top:1300px;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	margin:10px;
+
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 230px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	background-color:hsla(0, 100%, 30%, 0.3);//rgb(191, 255, 0);
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	background-color:black;
+	transform: rotateY(180deg);
+}
+.front img{
+	position:relative;
+	width:100%;
+	height:250px;
+}
+.back p{
+	text-align:justify;
+	color:rgb(191, 255, 0);
+}	
+.front h3{
+	text-align:center;
+	height:5px;
+}
+
+
+
+	.foot{
+		background-color:rgb(83, 91, 64);//rgb(191, 255, 0);//lightblue;	
+		position:absolute;
+		top:1500px;
+		bottom:0px;
+		width:100%;
+		height:350px;
+		left:0px;
+	}
+	.foot1{
+		display: flex;
+		//float:right;
+		background-color:black;
+		position:relative;
+		width:800px;
+		left:230px;
+		border-top-left-radius:80px;
+		border-top-right-radius:80px;
+	}
+	.foot1 div a{ 
+		text-decoration:none;
+		color:brown;
+	}
+	.foot1 div li{ 
+	//	text-decoration:none;
+		position:relative;
+		margin-top:12px;
+	}
+	.foot2{
+		background-color:grey;
+		height:70px;
+	}
+	.foot2 li{
+		display:inline;
+		padding:10px;
+		float:right;
+	}
+</style>
+</head>
+<body style="overflow:scroll;">
+<div id="mhead">
+	<div>
+		<div id="logo">		
+		<img src="Images/KEC_Transform.jpg" style="width:100px;height:100px;position:absolute;top:20px;left:15px;"/>
+
+	<p id="titl">Kongu<br/>
+	Engineering<br/>
+	College</p>
+		</div>
+		<div id="hmenu">
+			<!--<h2> Second Div</h2>-->
+			<div id="hmenu1">
+        <ul> <li><a href="#">Home</a> </li>
+            <li>
+            <a href="#">About KEC</a> </li>
+            <li>
+            <a href="#">Programmes</a>
+                <ul> <li><a href="#">Under Graduate</a></li> <li><a href="#">Post Graduate</a></li> <li><a href="#">Applied Sciences</a></li> </ul>
+            </li>
+            <li>
+            <a href="#">Schools and Departments</a>
+              <ul>   <div id="col"><li><a href="#">Building & Mechanical Sciences</a></li>
+		 <li><a href="#">Chemical and Food Sciences</a></li>
+		 <li><a href="#">Electrical Sciences</a></li> 
+		<li><a href="#">Communication and Computer Sciences</a></li>
+		<li><a href="#">Management Studies</a></li>
+		<li><a href="#">Computer Technology and Applications</a></li>
+		<li><a href="#">Science and Humanities</a></li></div>
+	 </ul>
+        	
+            </li>
+	 <li>
+            <a href="#">Facilities</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+	 <li>
+            <a href="#">Accreditation</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+        </ul>
+</div>
+	<div id="hmenu2">
+        <ul> <li><a href="#">COE</a>
+                <ul> <li><a href="#">National</a></li> <li><a href="#">International</a></li> <li><a href="#">Sport</a></li> <li><a href="#">Hollybood</a></li> </ul>
+            </li>
+            <li>
+            <a href="#">R&amp;D</a>
+		<ul> <li><a href="#">IT/Software</a></li> <li><a href="#">Hardware</a></li> <li><a href="#">Iphone</a></li> <li><a href="#">Neuro-Science</a></li> </ul>
+                
+            </li>
+            <li>
+            <a href="#">Placement</a>
+                <ul> <li><a href="#">Cricket</a></li> <li><a href="#">Tenis</a></li> <li><a href="#">Badminton</a></li> <li><a href="#">Hockey</a></li> </ul>
+            </li>
+            <li>
+            <a href="#">IIPC</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+	   <li>
+            <a href="#">Alumni</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+	   <li>
+            <a href="#">Contact</a>
+                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>
+        
+            </li>
+        </ul>
+</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="mainImg">
+<div></div>
+<img src="Images/flipImg1.jpg" style="width:100%;height:400px;"/>
+</div>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<div>
+          <h3>Cells for Student Support</h3>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+  <div>
+          <h3>Fee and Student Details</h3>
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    
+                </ul>
+            </div>
+</div>
+
+<div id="main">
+ <button class="openbtn" onclick="openNav()"> <i class="fa fa-bars"></i>  </button>
+  
+</div>
+
+
+<!--End of header-->
+<!--Upcoming Events-->
+<div class="right1">
+
+             <h2 style="text-align:center;text-decoration:underline;">Events Calender</h2>
+               <marquee direction="up" onmouseover="this.stop()" onmouseout="this.start()" height="500px" width="100%" align="center">
+                <ul id="events"> 
+               <li> <a href="#">CSIR Sponsored National Seminar on Novelty in Applications of Graph Theory to The Internet of Things</a>18&19 Jul 2019<br/></li>
+                 <br/>
+               <li> <a href="#">Two days workshop on Design of Solar PV and Thermal Energy systems </a>19&20 Jul 2019<br/></li>
+                 <br/>
+               <li> <a href="#">Hands-on Workshop on Introduction to MEAN Stack Development</a>20 Jul 2019<br/></li>
+                <br/>
+               <li> <a href="#">National Seminar on Adanced Microstructure Analysis of Concrete and its Inetrpretation</a> 25&26 Jul 2019<br/></li>
+                <br/>
+             <li>   <a href="#">CSIR Sponsored National Seminar on Recent Trends and Challenges in Bayesian Statistics for Big Data Analytics </a>26 Jul 2019<br/></li>
+   	<br/>
+             <li>   <a href="#">Hands-on Training to create Hybrid App (React Native with AngularJS, Android, iOS)</a>26 Jul 2019<br/></li>
+                 <br/>
+             <li>   <a href="#">SERB Sponsored Seminar on Biodegradable and Recyclable Lightweight Polymer Materials forAutomobile Applications</a>26&27 Jul 2019<br/></li>
+              </ul>
+	</marquee></div>
+
+<div id="mEvents">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 1</h3>
+               		<img src="Images/flipImg1.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 2</h3>
+                <img src="Images/flipImg2.gif"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 3</h3>
+                                <img src="Images/flipImg3.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 4</h3>
+                                  <img src="Images/flipImg4.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+</div>
+<!--Flip content url - https://davidwalsh.name/css-flip-->
+
+
+<div class="foot">
+        <div style="width:100%;text-align:center;">
+                 <h3>Search this website by keywords or browse from sections below</h3>
+                 <input type="text" placeholder="Search.." name="search" style="height:30px;"/>
+                <input  type="submit" style="height:30px;width:100px;"/>
+       </div><br/>
+<h3 style="text-align:center;color:red;">Quick Find</h3>
+<div class="foot1">
+                          <div>
+                  <ul>
+                    <li><a href="#">Administration</a></li>
+                    <li><a href="#">KEC Virtual Tour</a></li>
+                    <li><a href="#">KEC Web album</a></li>
+                    <li><a href="#">Patent Obtained</a></li>
+                    <li><a href="#">Kongu CRS</a></li>
+                </ul>
+            </div>
+	<div>
+                <ul>
+                    <li><a href="#">Antiragging Committee</a></li>
+                    <li><a href="#">Antiragging Squad</a></li>
+                    <li><a href="#">Anti-Sexual harassment Cell</a></li>
+                    <li><a href="#">Prohibition of Alcoholism</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+            <div>
+
+                <ul style="width:150px;">
+                    <li> <a href="#">Student Centrics Activities</a></li>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Fee Details</a></li>
+                    <li><a href="#">Grievance Redressal Committee</a></li>
+                </ul>
+            </div>
+           <div>
+
+                <ul>
+                    <li><a href="#">Library Committee</a></li>
+                    <li><a href="#">Staff Handbook</a></li>
+                    <li><a href="#">Non-teaching Staff</a></li>
+                    <li><a href="#">Audit Report</a></li>
+                    <li><a href="#">Mandatory Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+   <div class="foot2">
+                 <ul >
+                <li><a href="#">About KEC</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Research</a></li>
+                <li><a href="#">Site Map</a></li>
+                <li><a href="#">Feedback</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul><br/>
+	    <h4 style="text-align:right;">©2019 KEC.All rights reserved</h4>
+        </div>
+  </div>
+
+
+<!--000webhost URL- https://wtlabmanual.000webhostapp.com/index.html-->
+</body>
+</html>

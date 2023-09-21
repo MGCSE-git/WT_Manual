@@ -1,0 +1,127 @@
+<html>
+<head><title>Student's Personal Info using DOM</title>
+	<style>
+		div{
+			width:500px;
+			height:auto;
+			background-color:rgb(48, 70, 232);
+			opacity:.9;
+			position:fixed;top:50px;left:350px;
+			text-align:left;
+			overflow:auto;
+		}
+		form{
+			font-size:12pt;
+			font-weight:bold;
+			margin-left:50px;
+			color:white;
+		}
+		#res{
+			display:none;
+		}
+	</style>
+</head>
+<body style="background-image:url('../Images/bg.png');">
+<div>
+<h1 style="text-align:center;color:yellow;">Personal Details</h1>
+<form>
+	<label> Name</label>
+	<input type="text" id="uname" value=" " onfocus="tip()" onblur="del()"/><span id="tips" style="font-size:10pt;color:yellow;"></span><br/>
+	<br/><label>Date of Birth</label>
+	<input type="date" id="dob" value=" " onblur="calcAge()"/><br/><br/>
+	<label>Age</label>
+	<input type="text" id="age" value=" "/><br/><br/>
+	<label>Year of Study</label>
+	<select id="yr">
+	<option>Select</option>	
+	<option value="I">I</option>	
+	<option value="II">II</option>
+	<option value="III">III</option>
+	<option value="IV">IV</option>
+	</select><br/><br/>
+	<label>Community</label>
+	<input type="radio" name="com" value="OC"/>OC
+	<input type="radio" name="com" value="BC" />BC
+	<input type="radio" name="com" value="MBC"/>MBC<br/><br/>
+	
+	<label>Hobbies</label><br/>
+	<input type="checkbox" name="hobs" value="Singing"/><label>Singing</label><br/>
+	<input type="checkbox" name="hobs" value="Art and Craft" /><label>Art and Craft</label><br/>
+	<input type="checkbox" name="hobs" value="Instrumental Music"/><label>Instrumental Music</label><br/>		
+	<input type="checkbox" name="hobs" value="Fashion Design"/><label>Fashion Design</label><br/>
+	<input type="checkbox" name="hobs" value="Games"/><label>Games</label><br/>
+	<input type="checkbox" name="hobs" value="Script Writing"/><label>Script Writing</label><br/>
+	<br/>
+	<label>Emial-ID</label>
+	<input type="email" id="mail" value=" " required/><br/><br/>
+	<label>Mobile No.</label>
+	<input type="text" id="mobileno" value=" " required/><br/>
+	<input type="button" value="Register" onclick="Move()"/><br/>
+</form>
+</div>
+<p style="color:yellow;font-size:15pt;position:absolute;right:0px;top:100px;background-color:green;width:300px;" id="res">welcome</p>
+<script>
+	
+	var Name,comm,mydob,myage,para,sk,year,hobbies=" ";
+	var email,phno,l1,l2;
+	Name=document.getElementById("uname");
+	year=document.getElementById("yr");
+	var t=document.getElementById("tips");
+	function tip()
+	{
+		t.innerHTML="Enter your name in UpperCase";
+	}
+	function del()
+	{
+		t.innerHTML=" ";
+	}
+	function calcAge()
+	{
+		var yr,age,s;
+		var current=new Date();
+		t.innerHTML=" ";	
+		mydob=document.getElementById("dob").value;
+		s=mydob.split('-');
+		alert(s[0]);
+		myage=document.getElementById("age");
+		age=current.getFullYear()-parseInt(s[0]);
+		myage.value=age;
+		myage.readOnly=true;
+		year.focus();
+	}
+	function Move()
+	{
+
+		
+		email=document.getElementById("mail").value;
+		pho=document.getElementById("mobileno").value;
+		para=document.getElementById("res");
+		comm=document.getElementsByName("com");
+		sk=document.getElementsByName("hobs");
+		
+		l1=comm.length;
+		l2=sk.length;
+		//document.write("Your age: "+age);
+		for(var i=0;i<l1;i++)
+		{
+			if(comm[i].checked)
+			{	c=comm[i].value;
+				break;
+			}
+		}
+
+		for(var j=0;j<l2;j++)
+		{
+			if(sk[j].checked)
+			{	hobbies+=sk[j].value+"<br/> ";
+				
+			}
+		}		
+		para.innerHTML="Your Name: "+Name.value+"<br/>Your are in: "+year.value+"<br/>Your Age: "+myage.value+"<br/>You belong to:"+c+"<br/>Your Hobbies:"+hobbies;
+		para.innerHTML+="<br/>Email ID: "+email+"<br/>Mobile No.: "+pho;
+		para.style.display="block";
+		}
+</script>
+
+</body>
+</html>

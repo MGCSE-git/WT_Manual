@@ -1,0 +1,69 @@
+<html>
+<head><title>Language Translation</title>
+	<style>
+		body{
+			background-image:url("../Images/bg.png");
+			background-repeat:repeat;
+		}
+		h2{
+			color:pink;
+			background-color:green;
+			width:300px;
+			font-size:20pt;
+			text-decoration:underline;
+		}
+		div{
+			background-color:limegreen;
+			width:900px;
+			height:auto;
+			position:fixed;
+			top:0;
+		}
+	</style>
+</head>
+<body>
+
+
+	
+	<div>
+	<h1 style="text-align:center;color:gold;">Language Translation: English - PigLatin</h1>
+	<h2>Paragraph in English: </h2>
+	<p id="sen" style="color:purple;font-size:20pt;font-weight:bold;text-align:justify;background-color:gold;width:800px;">
+
+	Kongu Engineering College, one of the foremost multi professional research-led Institutions is internationally a recognized leader in professional and career-oriented education. It provides an integral, inter-disciplinary education - a unique intersection between theory and practice, passion and reason. </p>
+	<h2>Paragraph in PigLatin : </h2>
+	
+		<p id="res" style="color:gold;background-color:purple;font-weight:bold;font-size:20pt;text-align:justify;width:800px;"></p>
+	<form>
+		<input type="button" id="bt" value="Translate" style="background-color:brown;color:white;font-size:20pt;width:160px;height:60px;" onclick="Token()"/>
+		
+	</form>
+
+	</div>
+
+<script>
+var text=document.getElementById("sen").innerHTML;
+var pigLatin=[];
+var text1=" ";
+function Token()
+{
+var token=text.split(" ");
+var len=token.length;
+var s,tlen;
+var sub,ans;
+ans=document.getElementById("res");
+for(var k=0;k<len;k++)
+{
+	s=token[k].charAt(0);
+	tlen=token[k].length;
+	sub=token[k].slice(1,tlen);
+	pigLatin[k]=sub+s+"ay";
+//	pigLatin[k]=concat(
+	text1+=pigLatin[k]+" ";
+}
+ans.innerHTML=text1;
+}
+</script>
+</body>
+
+</html>

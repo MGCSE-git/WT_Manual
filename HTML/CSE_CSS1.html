@@ -1,0 +1,249 @@
+<html>
+	<head><title>Stylesheet and Menus</title>
+	<link rel="stylesheet" type="text/css" href="CSS1.css">		
+	<style>
+		.ssmenu{
+		display: none;
+    		position: absolute;
+		margin-left:170;
+		top:70;
+		//z-index: 1;
+		width:167px;
+		}
+		#sccs:hover .ssmenu{
+		display:block;
+		background-color:lightgrey;
+		}
+		.ssmenu a:hover {	
+		background-color:rgb(0,110,185);
+		}
+
+
+		#mainContent{
+			background-color:black;
+			opacity:.8
+		}
+		#content{
+			position:absolute;
+			background-color:black;
+			color:white;
+			font-family:cambria;
+			font-size:13pt;
+			text-align:justify;
+			top:250px;
+			left:190px;
+			width:1070px;
+			height:800px;
+			padding-left:15px;
+			padding-top:15px;
+		}	
+		.hods_msg{
+		background-color:black;
+		color:yellow;
+		width:13%;
+		height:60%;
+		font-family:cambria;
+		font-size:13pt;
+		text-align:justify;
+		position:relative;
+		left:0;
+		top:330px;
+		//top:230px;
+		opacity:.8;
+		}
+		figure{
+		position:relative;
+		margin:0;
+		top:5px;
+		padding-left:10px;
+		}
+		#events{
+		background-color:grey;
+		opacity:.7;
+		}
+		summary a{
+		color:white;
+		}		
+		.event{
+		border:groove 2px grey;
+		width:330px;
+		height:260px;
+		float:left;
+		padding:0px;
+		margin:6px;
+		}
+		.eventPic{
+		position:relative;
+		width:300px;
+		height:200px;
+		}
+		.eventContent{
+		position:relative;
+		bottom:230px;
+		left:7px;
+		width:300px;
+		height:200px;
+		background-color:lightgrey;
+		color:brown;
+		
+		}
+		footer h4{
+		position:absolute;
+//		top:800px;
+		bottom:-465px;
+		text-align:center;
+		background-color:lightgrey;
+		width:100%;
+		height:20px;
+		}
+		#others{
+		position:absolute;
+		top:700px;
+		width:1050px;
+		height:100px;
+		background-color:rgb(242,234,181);//black;
+		}
+		h3{
+		background-color:rgb(242,234,181);
+		color:black;
+		opacity:.8;
+		}
+		</style>	
+	</head>
+	<body>
+		<header id="header">
+			<img src="../Images/main_header1.jpg" width="100%" />
+
+		<nav class="main_menu">
+			<ul>
+				<li class="menus"><a href="kec_home.html">Home</a></li>
+				<li class="menus"><a href=" ">About KEC</a></li>
+				<li class="menus"><a href=" ">Schools</a>
+					<nav class="smenus">
+						<a href=" ">SBMS</a>
+						<a href=" ">SES</a>
+					<div id="sccs"><a href=" ">SCCS</a>
+						<nav class="ssmenu">
+							<a href=" ">CSE</a>
+							<a href=" ">IT</a>
+							<a href=" ">ECE</a>
+						</nav>
+					</div>
+						<a href=" ">S & H</a>
+					</nav>
+				</li>
+				<li class="menus"><a href=" ">Facilities</a>
+					<nav class="smenus">
+						<a href=" ">Class Rooms</a>
+						<a href=" ">Laboratories</a>
+						<a href=" ">Seminar Halls</a>	
+					</nav>
+				</li>
+				<li class="menus"><a href=" ">R&D</a>
+					<nav class="smenus">
+						<a href=" ">Projects</a>
+						<a href=" ">Workshops</a>
+						<a href=" ">Seminars</a>
+						<a href=" ">Publications</a>
+					</nav>
+				</li>
+				<li class="menus"><a href=" ">Placement</a></li>
+			</ul>
+		</nav>
+	</header>
+		<aside id="sidenav">
+			<nav>
+				<a href=" ">Student Centric Activities</a>
+				<a href=" ">Students' Achievements</a>
+				<a href=" ">Kongu CRS</a>
+				<a href=" ">KEC Virtual Tour</a>
+			</nav>
+		</aside>
+		
+		<article class="hods_msg">
+			<h3>HoD's Desk</h3>
+			<!--<img src="../Images/rrr.png" height="200px" width="180px"/>-->
+			<p>Message from HoD</p>
+		</article>
+		<article id="CSEA" style="position:absolute;top:840px;height:350px;left:40px;">
+		<img src="../Images/KEC_Transform.jpg" width="100px"/>-
+		</article>
+		<div id="mainContent">
+		<article id="content">
+			<h3>Vision</h3>
+			<p>To be a centre of excellence for development and dissemination of knowledge in Electronics and Communication Engineering for the Nation and beyond.
+			</p>
+			<h3>Mission</h3>
+			<p>Department of Electronics and Communication Engineering is committed
+
+			       <ul>	<li>To impart industry and research based quality education for developing value based Electronics and Communication engineers</li>
+				<li>    To enrich the academic activities by continual improvement in the teaching learning process</li>
+				<li>    To infuse confidence in the minds of students to develop as entrepreneurs</li>
+				<li>To develop expertise for consultancy activities by providing thrust for Industry Institute Interaction</li>
+			      	<li>To endeavor for constant up gradation of technical expertise for producing competent professionals to cater to the needs of the society and to meet the global challenges</li>
+			      </ul>
+			</p>
+			
+		<article id="events">	
+			<!--<table cellspacing="5px">-->
+			<h3>Events Scheduled</h3>
+			<!--<tr>-->
+			<section class="event" style="font-color:yellow;font-family:callibri;">
+				<details style="font-size:12pt;">
+				<summary><a href="http://keci2c2sw.kongu.edu/ " target="blank"><mark>I2C2SW 2018</mark></a>
+				<figure>
+				<img class="eventPic" src="../Images/digital_world1.jpg"/>
+				<figcaption style="text-align:center;font-size:13pt;">I2C2SW</figcaption>
+				</figure>		
+				</summary>
+ 				 <p class="eventContent" style="font-color:yellow;">The Conference focuses on the core technological developments in the emerging fields like Intelligent Computing, Communications and Control. These technologies have the potential to attract many intellectuals from India and abroad as a congregation to deliberate on the above themes and applications.
+				</p>
+ 				</details>
+			
+			</section>
+			<section class="event">
+			<details style="font-size:12pt;">
+  			<summary><a href="eeebrns.pdf">DAE-BRNS Sponsored National Seminar</a>
+				<figure>
+				<img class="eventPic" src="../Images/CollaborativeLearning.jpg"/>
+				<figcaption style="text-align:center;font-size:13pt;">National Seminar</figcaption>
+				</figure>		
+			</summary>
+			<p class="eventContent">In the present scenario, green technologies are playing
+significant role in changing the course of nation’s economic growth
+towards sustainability and providing an alternative socio-economic
+model that will enable present and future generations to live in a
+clean and healthy environment, in harmony with nature. </p>
+<p>
+<dl>
+<dt>SCHEDULED DATES:</dt>
+<dd>Last Date for receipt of Applications: 16.07.2018<br/>
+Intimation of Participants : 17.07.2018<br/>
+Confirmation of Participants : 18.07.2018<br/></dd>
+</dl>
+</p>
+</details></section>
+
+<section class="event"><details style="font-size:12pt;">
+  			<summary><a href="eeebrns.pdf">AICTE Sponsored National Seminar</a>
+				<figure>
+				<img class="eventPic" src="../Images/spectrum1.jpg"/>
+				<figcaption style="text-align:center;font-size:13pt;">National Workshop</figcaption>
+				</figure>		
+			</summary>
+			<p class="eventContent">In the present scenario, green technologies are playing
+significant role in changing the course of nation’s economic growth
+towards sustainability and providing an alternative socio-economic
+model that will enable present and future generations to live in a
+clean and healthy environment, in harmony with nature. </p>
+	</details></section>
+	</article>
+	
+	<aside id="others">
+	<h3 style="text-align:center;color:black;opacity:.8;">Other Events</h3>
+	</aside>
+	</article>
+	</div>
+<footer><h4>Website maintainted by KEC Web Group</h4></footer>
+   </boby>
+</html>

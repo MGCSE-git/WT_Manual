@@ -1,0 +1,90 @@
+
+<html>
+<head><title>Main Menus</title>
+	<style>
+#hmenu1{
+width:70%;
+height:130px;
+border-top-left-radius:70px;
+border-bottom-left-radius:70px;
+background-color:purple;
+right:0px;
+position:absolute;
+top:0;
+}
+#hmenu1 ul {
+//padding-left:15; 
+list-style:none;
+}
+#hmenu1 li {
+float:left; 
+position:relative; 
+padding-right:30; 
+display:block;
+}
+#hmenu1 li a{
+	color:aqua;
+	font-size:13pt;
+	text-decoration:none;
+}
+#hmenu1 li ul {
+    display:none;
+position:absolute;
+
+}
+#hmenu1 li ul a{
+	color:orange;
+}
+#hmenu1 li ul li{
+	padding-bottom:7px;
+}
+#hmenu1 li:hover ul{
+    display:block;
+    background:dodgerblue;
+height:auto; width:16em; 
+
+}
+		
+	</style>
+</head>
+
+<body>
+
+<div id="hmenu1">
+        <ul> <li><a href="#">Home</a> </li>
+            <li>
+            <a href="#">About KEC</a> </li>
+            <li>
+            <a href="#">Programmes</a>
+                <ul class="smenu"> <li><a href="#">Under Graduate</a><li/> <li><a href="#">Post Graduate</a></li><li><a href="#">Applied Sciences</a></li></ul>
+	</li>
+            
+            <li>
+            <a href="#">Schools and Departments</a>
+              <ul class="smenu">
+		<li><a href="#">Building & Mechanical Sciences</a></li>
+		<li><a href="#">Chemical and Food Sciences</a></li>
+		<li><a href="#">Electrical Sciences</a></li>
+		<li><a href="#">Communication and Computer Sciences</a></li>
+		
+		<li><a href="#">Management Studies</a><li/>
+		<li><a href="#">Computer Technology and Applications</a><li/>
+		<li><a href="#">Science and Humanities</a></li>
+		</ul>
+
+	     	
+            </li>
+	 <li>
+            <a href="#">Facilities</a>
+                <!--<ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>-->
+        
+            </li>
+	 <li>
+            <a href="#">Accreditation</a>
+<!--                <ul> <li><a href="#">India</a></li> <li><a href="#">America</a></li> <li><a href="#">France</a></li> <li><a href="#">Pakistaan</a></li> </ul>-->
+        
+            </li>
+        </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head><title>Language Translation</title>
+	<style>
+		body{
+			overflow:scroll;
+		}
+	</style>
+</head>
+<body>
+
+
+	<h1 style="color:purple;">Sentence in English: </h1>
+	<p id="sen" style="color:purple;font-size:20pt;font-weight:bold;background-color:yellowgreen;width:800px;">
+
+Kongu Engineering College, one of the foremost multi professional research-led Institutions is internationally a recognized leader in professional and career-oriented education. It provides an integral, inter-disciplinary education - a unique intersection between theory and practice, passion and reason. </p>
+	<div id="res" style="color:yellowgreen;background-color:grey;font-weight:bold;font-size:20pt;width:800px;"></div>
+	<form>
+		<input type="button" id="bt" value="Translate" onclick="Token()"/>
+	</form>
+<script>
+var text=document.getElementById("sen").innerHTML;
+var pigLatin=[];
+var text1=" ";
+function Token()
+{
+var token=text.split(" ");
+var len=token.length;
+var s,tlen;
+var sub,ans;
+ans=document.getElementById("res");
+for(var k=0;k<len;k++)
+{
+	s=token[k].charAt(0);
+	tlen=token[k].length;
+	sub=token[k].slice(1,tlen);
+	pigLatin[k]=sub+s+"ay";
+	text1+=pigLatin[k]+" ";
+}
+
+ans.innerHTML=text1;
+/*document.write("<h1 style='color:yellowgreen;'>English Language to PigLatin Translation</h1>");
+document.write("<table border='2' style='background-color:grey;position:fixed;margin-left:100px;border-style:solid;border-color:gold;'>");
+document.write("<td><h2 style='color:yellowgreen;'>English</h2></td>");
+document.write("<td><h2 style='color:yellowgreen;'>PigLatin</h2></td></tr>");
+for(var p=0;p<len;p++)
+{
+	document.write("<tr>");
+	document.write("<td><h3 style='color:yellow;'>"+token[p]+"</h3>");
+	document.write("</td>");
+	document.write("<td><h3 style='color:blue;'>"+pigLatin[p]+"</h3>");
+	document.write("</td>");
+	document.write("</tr>");
+	}
+document.write("</table>");*/
+
+}
+</script>
+</body>
+
+</html>

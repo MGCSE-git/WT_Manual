@@ -1,0 +1,44 @@
+<html>
+<body id="b">
+
+<p id="p1">This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+<button id="prev">Previous</button>
+<table><tr><td><b>Minion </b></td></tr>
+<tr><td><img id="pic1" src="minion.jpg" width="60%" height="60%"/></td></tr>
+</table>
+<button id="next">next</button>
+
+<script>
+var imgs=["cat1.jpg","cat2.jpg","cats.jpg","dog.jpg","dog1.jpg","duck.jpg","penguin.jpg"];
+var i=0;
+document.getElementById("p1").addEventListener("click", myFunction);
+document.getElementById("next").addEventListener("click", myFunction1);
+document.getElementById("prev").addEventListener("click", myFunction2);
+
+
+function myFunction() {
+//alert ("Hello World!");
+var a;
+a=document.getElementById("p1");
+p1.style.fontStyle = "italic";
+p1.style.fontWeight = "bold";
+p1.style.color = "green";
+}
+
+function myFunction1() {
+var pic=document.getElementById("pic1");
+pic.src=imgs[i];
+i++;
+var l=imgs.length-1;
+if(i==l)
+pic.src=imgs[l];
+}
+
+function myFunction2() {
+var pic=document.getElementById("pic1");
+i--;
+pic.src=imgs[i];
+}
+</script>
+</body>
+</html>

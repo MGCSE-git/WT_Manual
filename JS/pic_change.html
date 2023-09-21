@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<title>Slide Show</title>
+<style>
+	body{
+		background-image:url("../Images/bgNew2.jpg");
+		background-size:cover;
+	}
+	input{
+		font-size:18pt;
+		color:white;
+		background-color:black;
+		font-family:cambria;
+	}
+</style>
+<body id="b">
+
+
+<table>
+<tr><td colspan="2"><img id="pic1" src="../Images/Birds/b1.jpg" width="700px" height="500px"/></td></tr>
+
+<tr><td><input type="button" id="prev" value="<"/>
+</td>
+<td style="text-align:right;"><input type="button" id="next" value=">"/></td>
+</tr>
+</table>
+
+
+<script>
+
+var imgs=["b1.jpg","b2.jpg","b3.jpg","b4.jpg","b5.jpg","b6.jpg","b7.jpg","b8.jpg","b9.jpg","b10.jpg","b11.jpg","b12.jpg","b13.jpg","b14.jpg","b15.jpg"];
+
+var i=0;
+
+
+var Next=document.getElementById("next");
+var Prev=document.getElementById("prev")
+
+var pic=document.getElementById("pic1");
+
+//pic.setAttribute("width","700px");
+//pic.setAttribute("height","500px");
+
+function myFunction1() 
+{
+
+pic.src="../Images/Birds/"+imgs[i];
+
+i++;
+
+var l=imgs.length-1;
+
+if(i>l)
+
+pic.src="../Images/Birds/"+imgs[l];
+
+}
+
+
+
+function myFunction2() 
+{
+
+i--;
+
+pic.src="../Images/Birds/"+imgs[i];
+
+if(i<0)
+
+pic.src="../Images/Birds/"+imgs[0];
+
+}
+
+
+Next.addEventListener("click", myFunction1,false);
+
+
+
+Prev.addEventListener("click", myFunction2,false);
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head></head>
+<body>
+<!--AJAX-enabled javascript to display and clear the book content -->
+<!--HTML code to display the images of books -->
+<div  id="content">
+</div>
+<br/>
+<h1>Mouse over a book for more information.</h1>
+ <img id = "img1" width="20%" height="20%" alt = "C++ How to Program book cover" src = "book1.jpg" %" onmouseover="GetContent('book1.html')" onmouseout="Clear()"/>
+ <img id = "img2" width="20%" height="20%" alt = "Internet & WWW How to Program book cover"
+ src = "book2.jpg" onmouseover="GetContent('book2.html')" onmouseout="Clear()"/>
+ <img id = "img3" width="20%" height="20%" alt = "Web Designing"
+ src = "book2.jpg" onmouseover="GetContent('bk1.html')" onmouseout="Clear()"/>
+ <img id = "img4" width="20%" height="20%" alt = "Web Technologies, Black Book"
+ src = "book2.jpg" onmouseover="GetContent('bk2.html')" onmouseout="Clear()"/>
+ <img id = "img5" width="20%" height="20%" alt = "Mastering HTML, CSS & Javascript Web Publishing"
+ src = "book2.jpg" onmouseover="GetContent('bk3.html')" onmouseout="Clear()"/>
+<img id = "img3" width="20%" height="20%" alt = "Web Design with HTML, CSS, JavaScript and jQuery"
+ src = "book2.jpg" onmouseover="GetContent('bk4.html')" onmouseout="Clear()"/>
+<img id = "img3" width="20%" height="20%" alt = "Web Designing and Development: Training Guide"
+ src = "book2.jpg" onmouseover="GetContent('bk5.html')" onmouseout="Clear()"/>
+
+
+
+<script>
+var req;
+
+function GetContent(url)
+{
+	//create XMLHttpRequest object
+	req = new XMLHttpRequest();
+	req.addEventListener("readystatechange", StateChange, false);
+	//Initiate the XMLHttpRequest object
+	req.open("GET", url, true);
+	//Send the Ajax request to the server with the GET data
+	req.send(null);
+}
+function StateChange()
+{
+    if(req.readyState == 4)
+    {
+	document.getElementById("content").innerHTML = req.responseText;
+    }
+}
+function Clear()
+{
+	document.getElementById("content").innerHTML = " ";
+}
+</script>
+
+</boby
+</html>

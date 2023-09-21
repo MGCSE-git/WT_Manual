@@ -1,0 +1,81 @@
+		.main_menu ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			//overflow: hidden;
+			overflow:auto;
+			z-index:1;
+		}
+		.main_menu ul li {
+			float: left;
+		}
+		.menus a {
+    			display: block;
+			padding: 8px;
+			text-decoration:none;
+			color:white;
+			font-size:15pt;
+			font-weight:bold;
+		}
+		.main_menu{
+			
+			width:100%;
+			background-color:black;
+			overflow:auto;
+			//opacity:.8
+			
+		}
+		img{
+			overflow:hidden;
+			height:30%;
+		}
+		.smenus{
+			display:none;
+			background-color:lightgrey;//rgb(180,214,107);
+			width:130px;
+
+			position:absolute;
+			top:235px;
+		}
+		.smenus a{
+			display:block;
+			text-decoration:none;
+			font-size:14pt;
+			font-weight:bold;
+			border-bottom:groove 4px rgb(4,43,34);
+			color:black;
+			opacity:.8;
+		}	
+		.menus:hover .smenus{
+			display:block;
+			overflow:hidden;
+			color:rgb(242,234,181);
+			z-index:1;
+		}
+		#sidenav{
+			width:13%;
+			position:absolute;
+			top:250px;
+			height:800px;
+			background-color:rgb(242,234,181);
+		}
+		
+		#sidenav a{
+			display:block;
+			text-decoration:none;
+			color:black;
+			opacity:.8;
+			font-size:12pt;
+			font-weight:bold;
+			padding:4px 5px;
+		}
+		#sidenav a:hover{
+			background-color:black;
+			opacity:.8;
+			color:rgb(242,234,181);
+		}
+		.menus:hover{
+			background-color:lightgrey;
+			color:black;
+		}
+		

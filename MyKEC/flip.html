@@ -1,0 +1,129 @@
+﻿<html>
+<head><title>Flip events</title>
+<style>
+#mEvents{
+	display:flex;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	margin:10px;
+
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 300px;
+	height: 260px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	background-color:rgb(191, 255, 0);
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	background-color:black;
+	transform: rotateY(180deg);
+}
+.front img{
+	position:relative;
+	width:100%;
+	height:200px;
+}
+.back p{
+	text-align:justify;
+	color:rgb(191, 255, 0);
+}	
+.front h3{
+	text-align:center;
+}
+</style>
+</head>
+<div id="mEvents">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 1</h3>
+               		<img src="Images/flipImg1.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 2</h3>
+                <img src="Images/flipImg2.gif"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 3</h3>
+                                <img src="Images/flipImg3.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    CSS animations are a lot of fun; the beauty of them is that through many simple properties, you can create anything from an elegant fade in to a WTF-Pixar-would-be-proud effect. One CSS effect somewhere in between is the CSS flip effect, whereby there's content on both the front and back of a given container. This tutorial will show you show to create that effect in as simple a manner as possible.
+                </p>
+		</div>
+	</div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+		<div class="front">
+			<!-- front content -->
+			 <h3>Event 4</h3>
+                                  <img src="Images/flipImg4.jpg"/>
+		</div>
+		<div class="back">
+			<!-- back content -->
+			<p>
+                    Quick note: this is not the first tutorial about this effect, but I've found the others over-complicated. Many other tutorials add additional styles to code samples which then require the reader to decipher which are needed and which aren't. This tutorial avoids that issue, providing you only the necessary styles; you can pretty up each side of the flip any way you'd like.
+                </p>
+		</div>
+	</div>
+</div>
+</div>
+<!--Flip content url - https://davidwalsh.name/css-flip-->
+</body>
+</html>

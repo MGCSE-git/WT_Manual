@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>MouseOver and MouseOut Events</title>
+<style>
+	img{
+		width:500px;
+		height:500px;
+	}
+	body{
+		background-image:url("../Images/bgNew.jpg");
+	}
+</style>
+</head>
+		
+
+
+<body id="b">
+
+
+
+<table>
+<tr><td><h1 id="text1">Beautiful Puppies</h1> </td></tr>
+
+<tr><td><img id="pic1" src="../Images/dogs.jpg"/></td></tr>
+
+</table>
+
+<input type="button" id="myBtn" value="Change Pic"/>
+
+
+
+<div></div>
+
+
+<script>
+
+
+var para,b1,img1,text;
+text=document.getElementById("text1");
+b1=document.getElementById("myBtn");
+img1=document.getElementById("pic1");
+img1.addEventListener("mouseover", myFunction2);
+img1.addEventListener("mouseout", myFunction3);
+
+
+
+function myFunction1()
+ {
+
+var pic=document.getElementById("pic1");
+
+text.innerHTML="Cute Kittens";
+pic.src='../Images/cats.jpg';
+
+}
+
+
+function myFunction2() 
+{
+
+var pic=document.getElementById("pic1");
+
+text.innerHTML="Cute Little Angel";
+text.style.fontColor="blue";
+pic.src='../Images/pic2.jpg';
+
+}
+
+function myFunction3()
+{
+
+var pic=document.getElementById("pic1");
+
+text.innerHTML="Beautiful Puppies";
+text.style.fontColor="Purple";
+pic.src='../Images/dogs.jpg';
+
+}
+
+
+b1.addEventListener("click", myFunction1);
+
+</script>
+
+</body>
+
+</html>
+

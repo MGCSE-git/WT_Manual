@@ -1,0 +1,107 @@
+<html>
+<head><title>Student's Personal Info using DOM</title>
+	<style>
+		div{
+			width:500px;
+			height:auto;
+			background-color:dodgerblue;
+			opacity:.9;
+			position:fixed;top:50px;left:450px;
+			text-align:left;
+			border-radius:50px;
+		}
+		form{
+			margin-left:50px;
+		}
+		input{
+			border-radius:50px;
+			height:30px;width:200px;
+		}			
+		label{
+			color:brown;
+			font-size:15pt;
+		}
+	</style>
+
+</head>
+<body style="background-image:url('../Images/bg.png');">
+<div>
+<h1 style="text-align:center;color:yellow;">Register Here</h1>
+<form>
+		<label>Emial-ID</label>
+		<input type="text" id="mail1" onblur="validate()" style="margin-left:100px;"/><br/><br/>
+		<label> Password</label>
+		<input type="password" id="pass" onblur="del()" style="margin-left:100px;"/><br/><br/>
+		<label> Re-type Password</label>
+		<input type="password" id="cpass"  onblur="cmp()" style="margin-left:40px;"/><br/><br/>
+		<br/><input type="submit" value="Sign-Up"/>
+	
+</form>
+</div>
+
+<script>
+	var email,pass1,pass2,el,pl,em;
+	
+	function validate()
+	{
+
+		email=document.getElementById("mail1");
+		 em=email.value;
+		if(em=="")
+		{
+			window.alert("Please enter your email ID");
+			email.focus();
+		}
+		//Email Validation
+		
+			else if(em.indexOf('@')<=3)
+			{
+				alert("Enter a valid Email ID");			
+			}
+			else{
+				alert(em);				
+				var x=em.split("@");
+				var dotPos=x[1].indexOf('.');
+				var xl=x[0].length;
+				xl=xl+1;
+				var y=x[1].split(".");
+				if(dotPos==xl)
+					alert("Enter the email in correct format");
+				else if(y[1]!="com" || y[1]!="edu" || y[1]!="co" || y[1]!="ac")
+					alert("Enter the email in correct format");
+				else
+					window.location.href="personalInfo.html";						
+			}
+		
+	}
+	function del()
+	{
+		//Password Validation
+		pass1=document.getElementById("pass");
+		pl=pass1.value.length;
+		if( pass1.value=="")
+		{
+			alert("Please fill the password field")
+			pass1.focus();
+		}
+		else{
+			if(pl<6)
+				alert("Weak Password");
+			else if(pl>10)
+				alert("Strong Password");
+			else
+				alert("Frame strong password to secure it");
+		}
+	}
+	function cmp()
+	{
+		pass1=document.getElementById("pass").value;
+		pass2=document.getElementById("cpass").value;
+		if(pass1!==pass2)
+			alert("Confirm password does not match with password field");
+		
+	}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+<head><title>Demonstration of JavaScript DOM</title></head>
+<body id="b">
+
+<form style="background-color:grey;width:400px;">
+<br/><h1 id="head1" style="background-color:lightgreen;text-align:center;">RESUME REGISTRATION</h1>
+<p>
+<h3>Name:</h3>
+<input name = "name" type = "text" size = "25">
+<br/>
+<h3>Email Id:</h3>
+<input name = "mail" type = "text" size = "25">
+<br/>
+<h3>Educational Qualification</h3>
+<input type="radio" name="qual" value="12th" onclick="getQual(this);"/>
+12th</br>
+<input type="radio" name="qual" value="Diploma" onclick="getQual(this);"/>
+Diploma</br>
+<div id="div1"></div>
+
+<h3>Gender:</h3>
+<input type="radio" name="gender" value="Male"/>
+<label>Male</label>&nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="Female"/>
+<label>Female</label><br/><br/>
+<input type="button" value="Submit"/><br/>
+</p>
+</form>
+
+<script>
+
+function getQual(qual)
+{
+var res=qual.value;
+var elt=document.getElementById("div1");
+
+var t1 = document.createElement("input");
+t1.setAttribute("type","text");
+var t2 = document.createElement("input");
+t2.setAttribute("type","text");
+var t3 = document.createElement("input");
+t3.setAttribute("type","text");
+
+var tbl = document.createElement("table");
+tbl.setAttribute("bgcolor","lightgreen");
+var row1 = tbl.insertRow(0);
+var row2= tbl.insertRow(1);
+var row3=tbl.insertRow(2);
+
+var cell11 = row1.insertCell(0);
+var cell12 = row1.insertCell(1);
+var cell21 = row2.insertCell(0);
+var cell22 = row2.insertCell(1);
+var cell31 = row3.insertCell(0);
+var cell32 = row3.insertCell(1);
+
+var para=document.getElementById("demo");
+//elt.appendChild(tbl);
+
+// Add elements to get data for Diploma:
+elt.innerHTML=" ";
+if(res=="Diploma")
+{
+	cell11.innerHTML = "<h3>Sem2 Marks</h3>";
+	cell21.innerHTML = "<h3>Sem3 Marks</h3>";
+	cell31.innerHTML = "<h3>Sem4 Marks</h3>";
+	
+	cell12.appendChild(t1);
+	cell22.appendChild(t2);
+	cell32.appendChild(t3);
+
+	elt.appendChild(tbl);
+}
+
+// Add elements to get data for +2:
+ if(res=="12th")
+{
+	cell11.innerHTML = "<h3>Total Marks</h3>";
+	cell21.innerHTML = "<h3>Cutoff Marks</h3>";
+
+	cell12.appendChild(t1);
+	cell22.appendChild(t2);
+
+	elt.appendChild(tbl);
+
+}
+}
+
+</script>
+</body>
+</html>
