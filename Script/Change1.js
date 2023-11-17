@@ -49,18 +49,18 @@ function change(e)
 		case "EXPERIMENT-8":
 			e.innerHTML="Design a web page to create simple interactive CGPA calculator";
 			break;
-		case "EXPERIMENT-9":
+		/*case "EXPERIMENT-9":
 			e.innerHTML="Create a website to load the content dynamically using AJAX";
-			break;
+			break;*/
 		case "EXPERIMENT-10":
 			e.innerHTML="Create a website for student mark maintenance system using PHP and MySQL";
 			break;
 		case "EXPERIMENT-11":
 			e.innerHTML="Create a website to illustrate Session Tracking in PHP";
 			break;
-		case "EXPERIMENT-12":
+		/*case "EXPERIMENT-12":
 			e.innerHTML="Develop and deploy online reservation system using Java script, CSS , AJAX , PHP, MySQL with Session";
-			break;
+			break;*/
 		}
 				
 }	
